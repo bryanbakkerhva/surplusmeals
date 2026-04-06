@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Preview — Calculator & Abonnementen</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+  <style>
+    /* Make reveal sections visible without JS */
+    .reveal { opacity: 1 !important; transform: none !important; }
+  </style>
+</head>
+<body data-page="index">
+
+  <!-- IMPACT CALCULATOR -->
+  <section class="section-calculator reveal" id="calculator">
+    <div class="section-label">Jouw impact</div>
+    <h2>Wat betekent dit voor jou?</h2>
+    <p class="calc-intro">Beweeg de slider en zie je persoonlijke jaarimpact als je bij Surplus Meals afhaalt.</p>
+    <div class="calc-wrap">
+      <div class="slider-wrap">
+        <p class="calc-input-label">
+          Ik haal <strong id="mealsPerWeek">3</strong> avonden per week af
+        </p>
+        <input type="range" id="mealSlider" class="range-slider" min="1" max="7" value="3" aria-label="Aantal avonden per week"/>
+        <div class="slider-marks">
+          <span>1 avond</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7 avonden</span>
+        </div>
+      </div>
+      <div class="calc-results">
+        <div class="calc-card calc-card--green">
+          <div class="calc-icon"><i data-lucide="leaf"></i></div>
+          <span class="calc-number" id="calcFood">62</span>
+          <span class="calc-unit">kg voedsel</span>
+          <p class="calc-desc">gered per jaar dat anders verspild was</p>
+        </div>
+        <div class="calc-card calc-card--dark">
+          <div class="calc-icon"><i data-lucide="cloud"></i></div>
+          <span class="calc-number" id="calcCO2">156</span>
+          <span class="calc-unit">kg CO&#8322;</span>
+          <p class="calc-desc">bespaard per jaar dankzij minder voedselverspilling</p>
+        </div>
+        <div class="calc-card calc-card--orange">
+          <div class="calc-icon"><i data-lucide="euro"></i></div>
+          <span class="calc-number" id="calcMoney">1.326</span>
+          <span class="calc-unit">euro minder</span>
+          <p class="calc-desc">uitgegeven dan bij gemiddelde Thuisbezorgd-order</p>
+        </div>
+      </div>
+      <p class="calc-footnote">Berekening: 0,4 kg voedsel per maaltijd x 2,5 kg CO2/kg. Verschil met gem. Thuisbezorgd &#8364;18 (2025). Indicatief.</p>
+    </div>
+  </section>
+
+  <!-- ABONNEMENTEN -->
+  <section class="subscriptions-section reveal" id="abonnementen">
+    <div class="section-label">Abonnementen</div>
+    <h2>Bespaar met een maaltijdplan</h2>
+    <p class="sub-intro">Kies een vast plan en bespaar nog meer — op je portemonnee en op voedselverspilling.</p>
+    <div class="sub-grid">
+      <div class="sub-card">
+        <div class="sub-badge">Populair</div>
+        <h3>Basis</h3>
+        <div class="sub-price">&#8364;25<span>/week</span></div>
+        <p class="sub-meals">4 maaltijden per week</p>
+        <p class="sub-saving">Bespaar &#8364;5,- per week t.o.v. los bestellen</p>
+        <ul class="sub-features">
+          <li><i data-lucide="check" style="width:16px;height:16px"></i> Elke week 4 verse maaltijden</li>
+          <li><i data-lucide="check" style="width:16px;height:16px"></i> Mix van vegetarisch &amp; vegan</li>
+          <li><i data-lucide="check" style="width:16px;height:16px"></i> Flexibel pauzeren &amp; opzeggen</li>
+        </ul>
+        <a href="menu.html" class="btn btn-primary">Kies dit plan</a>
+      </div>
+      <div class="sub-card sub-card--featured">
+        <div class="sub-badge">Beste deal</div>
+        <h3>Compleet</h3>
+        <div class="sub-price">&#8364;40<span>/week</span></div>
+        <p class="sub-meals">7 maaltijden per week</p>
+        <p class="sub-saving">Bespaar &#8364;12,50 per week t.o.v. los bestellen</p>
+        <ul class="sub-features">
+          <li><i data-lucide="check" style="width:16px;height:16px"></i> Elke dag een verse maaltijd</li>
+          <li><i data-lucide="check" style="width:16px;height:16px"></i> Voorkeur aangeven voor menu</li>
+          <li><i data-lucide="check" style="width:16px;height:16px"></i> Flexibel pauzeren &amp; opzeggen</li>
+          <li><i data-lucide="check" style="width:16px;height:16px"></i> Gratis surprise maaltijd per maand</li>
+        </ul>
+        <a href="menu.html" class="btn btn-primary">Kies dit plan</a>
+      </div>
+      <div class="sub-card">
+        <h3>Flexibel</h3>
+        <div class="sub-price">&#8364;7,50<span>/maaltijd</span></div>
+        <p class="sub-meals">Los bestellen, geen verplichting</p>
+        <p class="sub-saving">Bestel wanneer je wilt</p>
+        <ul class="sub-features">
+          <li><i data-lucide="check" style="width:16px;height:16px"></i> Geen abonnement nodig</li>
+          <li><i data-lucide="check" style="width:16px;height:16px"></i> Direct bestellen via het menu</li>
+          <li><i data-lucide="check" style="width:16px;height:16px"></i> Ideaal om te proberen</li>
+        </ul>
+        <a href="menu.html" class="btn btn-outline">Bekijk menu</a>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/calculator.js"></script>
+  <script>
+    lucide.createIcons();
+    new ImpactCalculator();
+  </script>
+</body>
+</html>

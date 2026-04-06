@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Surplus Meals — Verse avondmaaltijden van gered voedsel, gemaakt door mensen die een kans verdienen. Opening 18 maart 2026 in Amsterdam."/>
+  <title>Surplus Meals — Opening 18 maart 2026</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/sections.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+</head>
+<body>
+
+<!-- ── SCROLL PROGRESS ── -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- ══════════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════════ -->
+<nav id="mainNav">
+  <a class="nav-logo" href="/">Surplus<span>Meals</span></a>
+
+  <div class="nav-links">
+    <a href="#probleem">Het probleem</a>
+    <a href="#calculator">Jouw impact</a>
+    <a href="#hoe-het-werkt">Hoe het werkt</a>
+    <a href="#founder">Ons verhaal</a>
+  </div>
+
+  <a href="#aanmelden" class="nav-cta">Aanmelden →</a>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════════
+     HERO — split left / right
+══════════════════════════════════════════════════ -->
+<section class="hero" id="hero">
+  <div class="hero-noise"></div>
+  <div class="hero-blob hero-blob--1"></div>
+  <div class="hero-blob hero-blob--2"></div>
+  <div class="hero-blob hero-blob--3"></div>
+
+  <div class="hero-grid">
+
+    <!-- LEFT: text + signup -->
+    <div class="hero-left">
+
+      <span class="badge hero-badge">
+        Pre-launch &nbsp;·&nbsp; Amsterdam &nbsp;·&nbsp; 18 maart 2026
+      </span>
+
+      <h1 class="hero-h1">
+        <span class="wr" style="animation-delay:0.15s">Red</span>&#32;<span class="wr accent" style="animation-delay:0.28s">voedsel.</span>
+        <br>
+        <span class="wr" style="animation-delay:0.42s">Eet</span>&#32;<span class="wr accent" style="animation-delay:0.56s">vers.</span>
+        <br>
+        <span class="wr accent2" style="animation-delay:0.70s">Maak</span>&#32;<span class="wr accent2" style="animation-delay:0.84s">impact.</span>
+      </h1>
+
+      <p class="hero-sub">
+        Verse avondmaaltijden van gered voedsel, gemaakt door mensen die een kans verdienen.
+        Afhaal in Amsterdam voor <strong style="color:var(--c-orange); font-weight:700">€9,50</strong>.
+      </p>
+
+      <!-- Inline signup — no card box -->
+      <div class="hero-signup" id="aanmelden">
+
+        <!-- Social proof row -->
+        <div class="signup-proof hero-proof">
+          <div class="proof-avatars">
+            <div class="proof-avatar">R</div>
+            <div class="proof-avatar">S</div>
+            <div class="proof-avatar">M</div>
+            <div class="proof-avatar">+<span id="signupCount">47</span></div>
+          </div>
+          <span class="proof-text">mensen schrijven zich al in</span>
+        </div>
+
+        <p class="hero-signup-label">Schrijf je in voor onze nieuwsbrief en volg onze progressie tot 18 maart.</p>
+
+        <!-- Signup form -->
+        <div id="heroSignupWrap">
+          <form class="form-group hero-form" id="heroSignupForm" novalidate>
+            <input
+              type="email"
+              id="heroEmailInput"
+              class="form-input form-input--dark"
+              placeholder="jouw@email.nl"
+              autocomplete="email"
+              required
+            />
+            <button type="submit" class="btn btn-primary">Aanmelden</button>
+          </form>
+          <p class="signup-privacy">Geen spam. Je kunt je altijd uitschrijven.</p>
+        </div>
+
+        <!-- Success state -->
+        <div class="signup-success" id="heroSignupSuccess">
+          <div class="success-icon">
+            <i data-lucide="check" style="width:24px;height:24px;stroke-width:2.5"></i>
+          </div>
+          <h4>Welkom aan boord!</h4>
+          <p>Je staat op de lijst. We laten je als eerste weten wanneer we openen.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- RIGHT: countdown + stats -->
+    <div class="hero-right">
+
+      <div class="flip-clock-wrap">
+        <p class="flip-clock-label">Opening over</p>
+        <div class="flip-clock" id="flipClock"></div>
+      </div>
+
+      <!-- Amsterdam map — shows opening area -->
+      <div class="hero-map-wrap">
+        <div class="hero-map-label">
+          <i data-lucide="map-pin" style="width:13px;height:13px;stroke-width:2.5"></i>
+          Ophaallocatie &nbsp;·&nbsp; Amsterdam Centrum
+        </div>
+        <iframe
+          class="hero-map"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d9741.0!2d4.9003!3d52.3702!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1snl!2snl!4v1741500000000!5m2!1snl!2snl"
+        ></iframe>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">€9,50</div>
+          <div class="hero-stat-desc">per verse maaltijd</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">Amsterdam</div>
+          <div class="hero-stat-desc">afhaal, centrale locatie</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">18 mrt</div>
+          <div class="hero-stat-desc">opening 2026</div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ── TICKER ── -->
+<div class="ticker" aria-hidden="true">
+  <div class="ticker-track">
+    Red voedsel<span class="ticker-dot"></span>Eet vers<span class="ticker-dot"></span>Maak impact<span class="ticker-dot"></span>Amsterdam<span class="ticker-dot"></span>Opening 18 maart 2026<span class="ticker-dot"></span>€9,50 per maaltijd<span class="ticker-dot"></span>Gered voedsel<span class="ticker-dot"></span>Echte kansen<span class="ticker-dot"></span>Geen kant-en-klaar<span class="ticker-dot"></span>Red voedsel<span class="ticker-dot"></span>Eet vers<span class="ticker-dot"></span>Maak impact<span class="ticker-dot"></span>Amsterdam<span class="ticker-dot"></span>Opening 18 maart 2026<span class="ticker-dot"></span>€9,50 per maaltijd<span class="ticker-dot"></span>Gered voedsel<span class="ticker-dot"></span>Echte kansen<span class="ticker-dot"></span>Geen kant-en-klaar<span class="ticker-dot"></span>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════
+     PROBLEEM
+══════════════════════════════════════════════════ -->
+<section class="section-problem" id="probleem">
+  <div class="container">
+
+    <div class="reveal">
+      <span class="label">Het probleem</span>
+      <h2 class="section-title">Iets klopt er niet.</h2>
+      <p class="section-sub">
+        Miljarden kilo's eten verdwijnen in de prullenbak, terwijl miljoenen mensen moeite hebben om elke dag goed en gezond te eten. Dat is geen toeval. Dat is een systeem.
+      </p>
+    </div>
+
+    <!-- Animated stat cards -->
+    <div class="stat-grid reveal-stagger">
+
+      <div class="stat-card stat-card--dark reveal">
+        <div class="stat-num-wrap">
+          <span class="stat-number" data-target="2.3" data-format="decimal1" id="stat1">0</span>
+          <span class="stat-unit"> mrd kg</span>
+        </div>
+        <p class="stat-desc">voedsel verspild per jaar in Nederland</p>
+        <span class="stat-source">Wageningen UR, 2024</span>
+      </div>
+
+      <div class="stat-card stat-card--orange reveal reveal--delay-2">
+        <div class="stat-num-wrap">
+          <span class="stat-number" data-target="65" data-format="int" id="stat2">0</span>
+          <span class="stat-unit">%</span>
+        </div>
+        <p class="stat-desc">wil gezonder eten, maar lukt niet door tijd &amp; kennis</p>
+        <span class="stat-source">Rijksoverheid, 2025</span>
+      </div>
+
+      <div class="stat-card stat-card--mint reveal reveal--delay-4">
+        <div class="stat-num-wrap">
+          <span class="stat-prefix">1 op </span>
+          <span class="stat-number" data-target="3" data-format="int" id="stat3">0</span>
+        </div>
+        <p class="stat-desc">studenten eet structureel te weinig groenten</p>
+        <span class="stat-source">FDMG, 2023</span>
+      </div>
+
+    </div>
+
+    <!-- Interview quotes (from Roan & Ruud) -->
+    <div class="quote-grid">
+
+      <blockquote class="quote-card reveal">
+        <p>"Het lastigste is dat het best wel veel tijd kost om klaar te maken. Als er een goed alternatief was op kant-en-klaar dat wat verser is, dat spreekt me enorm aan."</p>
+        <cite>Roan, 22 jaar, zelfstandig Amsterdam</cite>
+      </blockquote>
+
+      <blockquote class="quote-card reveal reveal--delay-2">
+        <p>"Ik vind het moeilijk om iedere keer weer te bedenken wat je moet eten. Dat verspilling tegengaan terwijl je lekker en gezond eet, dat is supermooi."</p>
+        <cite>Ruud, 30 jaar, zelfstandig</cite>
+      </blockquote>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════
+     OPLOSSING — Scroll-driven showcase
+══════════════════════════════════════════════════ -->
+<section class="section-solution" id="oplossing">
+  <div class="solution-scroll">
+    <div class="solution-sticky">
+
+      <!-- LEFT: steps -->
+      <div class="solution-left">
+
+        <div class="solution-header">
+          <span class="label label--light">De oplossing</span>
+          <h2 class="section-title section-title--white">Surplus Meals.</h2>
+          <p class="section-sub section-sub--white">
+            Drie problemen. Eén oplossing. Elke maaltijd telt.
+          </p>
+        </div>
+
+        <div class="solution-steps" id="solutionSteps">
+
+          <div class="solution-step is-active" data-step="0">
+            <div class="solution-step-header">
+              <span class="solution-step-num">01</span>
+              <div class="solution-step-icon"><i data-lucide="recycle"></i></div>
+              <h3 class="solution-step-title">Gered voedsel</h3>
+            </div>
+            <div class="solution-step-body">
+              <p>Reststromen van boeren en groothandels als basis. HACCP-gecertificeerd en volledig traceerbaar. Elke maaltijd begint met voedsel dat anders was afgevoerd.</p>
+            </div>
+          </div>
+
+          <div class="solution-step" data-step="1">
+            <div class="solution-step-header">
+              <span class="solution-step-num">02</span>
+              <div class="solution-step-icon"><i data-lucide="users"></i></div>
+              <h3 class="solution-step-title">Mensen met een verhaal</h3>
+            </div>
+            <div class="solution-step-body">
+              <p>Koks met afstand tot de arbeidsmarkt. Echte werkervaring, echte begeleiding, echte kansen. Geen vrijwilligerswerk — een echte baan.</p>
+            </div>
+          </div>
+
+          <div class="solution-step" data-step="2">
+            <div class="solution-step-header">
+              <span class="solution-step-num">03</span>
+              <div class="solution-step-icon"><i data-lucide="shopping-bag"></i></div>
+              <h3 class="solution-step-title">Afhaalmaaltijd</h3>
+            </div>
+            <div class="solution-step-body">
+              <p>Verse avondmaaltijd, €9,50, klaar om op te warmen. Afhaal in Amsterdam op een centrale locatie. Geen abonnement, geen verplichting.</p>
+            </div>
+          </div>
+
+          <div class="solution-step" data-step="3">
+            <div class="solution-step-header">
+              <span class="solution-step-num">04</span>
+              <div class="solution-step-icon"><i data-lucide="bar-chart-2"></i></div>
+              <h3 class="solution-step-title">Meetbare impact</h3>
+            </div>
+            <div class="solution-step-body">
+              <p>Kg gered voedsel en CO2 bespaard per maaltijd. Geen vage claims — cijfers per klant, transparant en eerlijk.</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Progress pills -->
+        <div class="solution-dots" id="solutionDots">
+          <span class="solution-dot is-active" data-step="0"></span>
+          <span class="solution-dot" data-step="1"></span>
+          <span class="solution-dot" data-step="2"></span>
+          <span class="solution-dot" data-step="3"></span>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: images -->
+      <div class="solution-right" id="solutionImages">
+
+        <div class="solution-img is-active" data-step="0">
+          <img src="assets/Gered voedsel.jpg" alt="Gered voedsel"/>
+          <div class="solution-img-overlay">
+            <span class="solution-img-tag">01 / 04</span>
+            <p class="solution-img-caption">Gered voedsel</p>
+          </div>
+        </div>
+
+        <div class="solution-img" data-step="1">
+          <img src="assets/Mensen met een verhaal.jpeg" alt="Mensen met een verhaal"/>
+          <div class="solution-img-overlay">
+            <span class="solution-img-tag">02 / 04</span>
+            <p class="solution-img-caption">Mensen met een verhaal</p>
+          </div>
+        </div>
+
+        <div class="solution-img" data-step="2">
+          <img src="assets/Afhaalmaaltijd.jpg" alt="Afhaalmaaltijd"/>
+          <div class="solution-img-overlay">
+            <span class="solution-img-tag">03 / 04</span>
+            <p class="solution-img-caption">Afhaalmaaltijd</p>
+          </div>
+        </div>
+
+        <div class="solution-img" data-step="3">
+          <img src="assets/Meetbare impact.jpg" alt="Meetbare impact"/>
+          <div class="solution-img-overlay">
+            <span class="solution-img-tag">04 / 04</span>
+            <p class="solution-img-caption">Meetbare impact</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════
+     IMPACT CALCULATOR
+══════════════════════════════════════════════════ -->
+<section class="section-calculator" id="calculator">
+  <div class="container">
+
+    <div class="reveal" style="text-align:center">
+      <span class="label">Jouw impact</span>
+      <h2 class="section-title">Wat betekent dit voor jou?</h2>
+      <p class="section-sub" style="margin:0 auto var(--sp-xl)">
+        Beweeg de slider en zie je persoonlijke jaarimpact als je bij Surplus Meals afhaalt.
+      </p>
+    </div>
+
+    <div class="calc-wrap reveal">
+
+      <!-- Slider input -->
+      <div class="slider-wrap">
+        <p class="calc-input-label">
+          Ik haal <strong id="mealsPerWeek">3</strong> avonden per week af
+        </p>
+        <input
+          type="range"
+          id="mealSlider"
+          class="range-slider"
+          min="1" max="7" value="3"
+          aria-label="Aantal avonden per week"
+        />
+        <div class="slider-marks">
+          <span>1 avond</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+          <span>6</span>
+          <span>7 avonden</span>
+        </div>
+      </div>
+
+      <!-- Result cards -->
+      <div class="calc-results">
+
+        <div class="calc-card calc-card--green">
+          <div class="calc-icon">
+            <i data-lucide="leaf"></i>
+          </div>
+          <span class="calc-number" id="calcFood">62</span>
+          <span class="calc-unit">kg voedsel</span>
+          <p class="calc-desc">gered per jaar dat anders verspild was</p>
+        </div>
+
+        <div class="calc-card calc-card--dark">
+          <div class="calc-icon">
+            <i data-lucide="cloud"></i>
+          </div>
+          <span class="calc-number" id="calcCO2">156</span>
+          <span class="calc-unit">kg CO2</span>
+          <p class="calc-desc">bespaard per jaar dankzij minder voedselverspilling</p>
+        </div>
+
+        <div class="calc-card calc-card--orange">
+          <div class="calc-icon">
+            <i data-lucide="euro"></i>
+          </div>
+          <span class="calc-number" id="calcMoney">1.326</span>
+          <span class="calc-unit">euro minder</span>
+          <p class="calc-desc">uitgegeven dan bij gemiddelde Thuisbezorgd-order (18 euro)</p>
+        </div>
+
+      </div>
+
+      <p class="calc-footnote">
+        Berekening: 0,4 kg voedsel per maaltijd x 2,5 kg CO2/kg. Verschil met gem. Thuisbezorgd 18 euro (2025). Indicatief.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════
+     HOE HET WERKT
+══════════════════════════════════════════════════ -->
+<section class="section-how" id="hoe-het-werkt">
+  <div class="container">
+
+    <div class="reveal" style="text-align:center">
+      <span class="label label--light">Hoe het werkt</span>
+      <h2 class="section-title section-title--white">Drie stappen.</h2>
+      <p class="section-sub section-sub--white" style="margin:0 auto var(--sp-xl)">
+        Zo simpel kan goed eten zijn.
+      </p>
+    </div>
+
+    <div class="steps-grid reveal-stagger">
+
+      <div class="step-card reveal">
+        <span class="step-num">01</span>
+        <div class="step-icon">
+          <i data-lucide="calendar"></i>
+        </div>
+        <h3>Bestel online</h3>
+        <p>Kies je ophaalmoment via onze website. Dezelfde dag of een dag van tevoren. Walk-in ook welkom.</p>
+      </div>
+
+      <div class="step-card reveal reveal--delay-2">
+        <span class="step-num">02</span>
+        <div class="step-icon">
+          <i data-lucide="map-pin"></i>
+        </div>
+        <h3>Haal op in Amsterdam</h3>
+        <p>Onze pop-up keuken zit op een centrale locatie, makkelijk op je fiets- of looproute.</p>
+      </div>
+
+      <div class="step-card reveal reveal--delay-4">
+        <span class="step-num">03</span>
+        <div class="step-icon">
+          <i data-lucide="flame"></i>
+        </div>
+        <h3>Warm op &amp; geniet</h3>
+        <p>In 3 minuten klaar. Vers bereid, niet kant-en-klaar. Groenten, eiwitten, smaak.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════
+     PRIJS & AFHAAL BEZWAAR
+══════════════════════════════════════════════════ -->
+<section class="section-pricing" id="prijs">
+  <div class="container">
+
+    <div class="reveal">
+      <span class="label">Prijs &amp; toegankelijkheid</span>
+      <h2 class="section-title">Goed eten hoeft niet duur te zijn.</h2>
+      <p class="section-sub">Een bewuste keuze die ook financieel klopt.</p>
+    </div>
+
+    <div class="pricing-grid reveal-stagger">
+
+      <!-- Thuisbezorgd -->
+      <div class="price-card reveal">
+        <span class="price-tag price-tag--default">Thuisbezorgd</span>
+        <div class="price-amount">16-22 euro</div>
+        <p class="price-period">per maaltijd incl. bezorgkosten</p>
+        <ul class="price-features">
+          <li class="price-feature">
+            <span class="price-feature-icon pf-pos"><i data-lucide="check"></i></span>
+            Thuisbezorgd, weinig moeite
+          </li>
+          <li class="price-feature">
+            <span class="price-feature-icon pf-neg"><i data-lucide="x"></i></span>
+            Hoge bezorg- en servicekosten
+          </li>
+          <li class="price-feature">
+            <span class="price-feature-icon pf-neg"><i data-lucide="x"></i></span>
+            Veel verpakkingsafval
+          </li>
+          <li class="price-feature">
+            <span class="price-feature-icon pf-neg"><i data-lucide="x"></i></span>
+            Geen maatschappelijke waarde
+          </li>
+        </ul>
+      </div>
+
+      <!-- Surplus Meals (featured) -->
+      <div class="price-card price-card--featured reveal reveal--delay-2">
+        <span class="price-tag price-tag--featured">Surplus Meals</span>
+        <div class="price-amount">€9,50</div>
+        <p class="price-period">per verse avondmaaltijd</p>
+        <ul class="price-features">
+          <li class="price-feature">
+            <span class="price-feature-icon pf-pos"><i data-lucide="check"></i></span>
+            Vers bereid, geen kant-en-klaar
+          </li>
+          <li class="price-feature">
+            <span class="price-feature-icon pf-pos"><i data-lucide="check"></i></span>
+            Gered voedsel, minder verspilling
+          </li>
+          <li class="price-feature">
+            <span class="price-feature-icon pf-pos"><i data-lucide="check"></i></span>
+            Baan voor koks met afstand tot markt
+          </li>
+          <li class="price-feature">
+            <span class="price-feature-icon pf-pos"><i data-lucide="check"></i></span>
+            Onder de 10 euro, bewuste keuze
+          </li>
+        </ul>
+      </div>
+
+      <!-- Zelf koken -->
+      <div class="price-card reveal reveal--delay-4">
+        <span class="price-tag price-tag--default">Zelf koken</span>
+        <div class="price-amount">~5 euro</div>
+        <p class="price-period">per maaltijd + 45 min. tijd</p>
+        <ul class="price-features">
+          <li class="price-feature">
+            <span class="price-feature-icon pf-pos"><i data-lucide="check"></i></span>
+            Goedkoopste optie
+          </li>
+          <li class="price-feature">
+            <span class="price-feature-icon pf-neg"><i data-lucide="x"></i></span>
+            Tijdrovend, dagelijks bedenken
+          </li>
+          <li class="price-feature">
+            <span class="price-feature-icon pf-neg"><i data-lucide="x"></i></span>
+            Boodschappen doen + koken = moeite
+          </li>
+          <li class="price-feature">
+            <span class="price-feature-icon pf-neg"><i data-lucide="x"></i></span>
+            Geen impact op voedselverspilling
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Afhaal objection — direct uit interviews! -->
+    <div class="afhaal-block reveal">
+      <div class="afhaal-icon">
+        <i data-lucide="map-pin"></i>
+      </div>
+      <div class="afhaal-text">
+        <h3>"Maar ik moet het zelf ophalen?"</h3>
+        <p>
+          Ja, en we horen je. Uit onze gesprekken met Amsterdammers weten we dat afhalen soms als een extra stop voelt. Daarom kiezen we bewust voor een ophaallocatie in het hart van Amsterdam, op een route die je toch al fietst of loopt. Walk-in of vooraf bestellen via de website: jij kiest. Bezorging is iets waar we in fase 2 actief naar kijken.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════
+     FOUNDER STORY
+══════════════════════════════════════════════════ -->
+<section class="section-founder" id="founder">
+  <div class="container">
+
+    <div class="founder-layout">
+
+      <!-- Visual (sticky on desktop) -->
+      <div class="founder-visual reveal">
+        <div class="founder-photo">
+          <img
+            src="assets/bryan.jpg"
+            alt="Bryan Bakker, oprichter Surplus Meals"
+            class="founder-photo-img"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'"
+          />
+          <span class="founder-initials" style="display:none">BB</span>
+        </div>
+        <div class="founder-tags">
+          <span class="tag">Gezondheidsgekkie</span>
+          <span class="tag">Impact ondernemer</span>
+          <span class="tag">Nieuwe economie</span>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="founder-content">
+
+        <div class="reveal">
+          <span class="label">De oprichter</span>
+          <h2 class="section-title">Waarom ik dit doe.</h2>
+          <p class="section-sub">
+            Bryan Bakker, oprichter van Surplus Meals.
+          </p>
+        </div>
+
+        <!-- Timeline -->
+        <div class="timeline reveal">
+
+          <div class="timeline-item">
+            <div class="timeline-track">
+              <div class="timeline-dot"></div>
+            </div>
+            <div>
+              <span class="timeline-label">Het inzicht</span>
+              <p class="timeline-text">
+                Ik ben geobsedeerd door gezondheid én door de vraag: hoe maak je echte impact met een bedrijf? Toen ik de cijfers zag, 2,3 miljard kilo verspild voedsel in Nederland, 65% wil gezonder eten maar lukt het niet, dacht ik: dit is hetzelfde probleem, twee kanten.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-track">
+              <div class="timeline-dot"></div>
+            </div>
+            <div>
+              <span class="timeline-label">Het idee</span>
+              <p class="timeline-text">
+                Surplus Meals lost twee dingen tegelijk op: voedsel dat anders wordt afgevoerd, bereid door mensen die een kans verdienen, op tafel bij mensen die gezond willen eten zonder het zelf elke dag te hoeven bedenken. Driedubbele impact. Eén maaltijd.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item timeline-item--active">
+            <div class="timeline-track">
+              <div class="timeline-dot"></div>
+            </div>
+            <div>
+              <span class="timeline-label">Nu, opening 18 maart 2026</span>
+              <p class="timeline-text">
+                We openen de deuren in Amsterdam. Nog niet perfect, wel eerlijk. We starten klein, leren snel, en bouwen samen met jou aan iets wat echt werkt. Wil je er bij zijn van het eerste moment?
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Quote -->
+        <blockquote class="founder-quote reveal">
+          <p>"Goed eten mag geen luxe zijn. Goed voedsel mag niet worden weggegooid. Dat zijn twee kanten van hetzelfde probleem."</p>
+          <cite>Bryan Bakker, oprichter Surplus Meals</cite>
+        </blockquote>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════
+     FINAL CTA
+══════════════════════════════════════════════════ -->
+<section class="section-cta" id="cta-final">
+  <div class="container">
+    <div class="cta-content">
+
+      <div class="reveal">
+        <span class="label label--light">Nieuwsbrief</span>
+        <h2 class="section-title section-title--white">Schrijf je in voor updates.</h2>
+        <p class="section-sub section-sub--white" style="margin:0 auto 36px">
+          We openen 18 maart 2026 in Amsterdam. Schrijf je in voor onze nieuwsbrief en blijf op de hoogte van onze voortgang tot de opening.
+        </p>
+      </div>
+
+      <div class="reveal reveal--delay-2">
+        <div id="ctaSignupWrap">
+          <form class="cta-form form-group" id="ctaSignupForm" novalidate>
+            <input
+              type="email"
+              id="ctaEmailInput"
+              class="form-input"
+              placeholder="jouw@email.nl"
+              autocomplete="email"
+              required
+            />
+            <button type="submit" class="btn btn-primary">Schrijf me in</button>
+          </form>
+          <p class="cta-note">Geen spam. Geen gedoe. Altijd uitschrijven mogelijk.</p>
+        </div>
+
+        <div class="signup-success" id="ctaSignupSuccess" style="text-align:center">
+          <div class="success-icon" style="margin:0 auto 16px; background:rgba(183,228,199,0.15);">
+            <i data-lucide="check" style="width:24px;height:24px;stroke-width:2.5;color:var(--c-green-light)"></i>
+          </div>
+          <h4 style="font-family:var(--f-serif);color:var(--c-green-light);font-size:24px;margin-bottom:8px">Welkom aan boord!</h4>
+          <p style="color:rgba(255,255,255,0.55);font-size:14px">Je staat op de lijst. Tot 18 maart!</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Surplus<span>Meals</span></div>
+      <p class="footer-tagline" style="margin-top:6px">Red voedsel. Eet vers. Maak impact.</p>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:hello@surplusmeals.nl">hello@surplusmeals.nl</a>
+      <a href="#aanmelden">Aanmelden</a>
+      <a href="#founder">Over ons</a>
+    </div>
+    <p class="footer-tagline">2026 Surplus Meals · Amsterdam</p>
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════════════════
+     MOBILE STICKY BAR
+══════════════════════════════════════════════════ -->
+<div class="mobile-bar" id="mobileBar" style="transition:opacity 0.3s">
+  <div class="mobile-bar-time">
+    <span id="mobileBarTime">9d 00:00</span>
+    <small>tot opening</small>
+  </div>
+  <a href="#aanmelden" class="mobile-bar-btn">Schrijf me in</a>
+</div>
+
+
+<!-- ── SCRIPTS ── -->
+<script src="js/flip-clock.js"></script>
+<script src="js/calculator.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

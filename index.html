@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Surplus Meals — Verse maaltijden van gered voedsel in Amsterdam. Dagelijks vers bereid van ingrediënten die anders verspild werden. Afhalen vanaf €7,-"/>
+  <title>Surplus Meals | Verse maaltijden van gered voedsel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/sections.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+</head>
+<body data-page="index">
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <nav class="site-nav" id="siteNav">
+    <a class="nav-logo" href="index.html">Surplus<span>Meals</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="nav-link" data-page="index">Home</a>
+      <a href="menu.html" class="nav-link" data-page="menu">Bestellen</a>
+      <a href="over-ons.html" class="nav-link" data-page="over-ons">Over ons</a>
+      <a href="impact.html" class="nav-link" data-page="impact">Impact</a>
+      <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="menu.html" class="cart-btn" id="cartBtn" title="Winkelwagen">
+        <i data-lucide="shopping-bag" style="width:20px;height:20px"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+      <a href="menu.html" class="nav-cta">Bestel nu</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" data-page="index">Home</a>
+    <a href="menu.html" data-page="menu">Bestellen</a>
+    <a href="over-ons.html" data-page="over-ons">Over ons</a>
+    <a href="impact.html" data-page="impact">Impact</a>
+    <a href="contact.html" data-page="contact">Contact</a>
+    <a href="menu.html" class="mobile-nav-cta">Bestel nu</a>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div class="hero-noise"></div>
+      <div class="hero-blob hero-blob--1"></div>
+      <div class="hero-blob hero-blob--2"></div>
+      <div class="hero-blob hero-blob--3"></div>
+
+      <div class="hero-grid">
+
+        <!-- LEFT: tekst + CTAs -->
+        <div class="hero-left">
+
+          <span class="badge hero-badge">
+            Nu open &nbsp;·&nbsp; Amsterdam Oost &nbsp;·&nbsp; Afhalen vanaf €7,-
+          </span>
+
+          <h1 class="hero-h1">
+            <span class="wr" style="animation-delay:0.15s">Red</span>&#32;<span class="wr accent" style="animation-delay:0.28s">voedsel.</span>
+            <br>
+            <span class="wr" style="animation-delay:0.42s">Eet</span>&#32;<span class="wr accent" style="animation-delay:0.56s">vers.</span>
+            <br>
+            <span class="wr accent2" style="animation-delay:0.70s">Maak</span>&#32;<span class="wr accent2" style="animation-delay:0.84s">impact.</span>
+          </h1>
+
+          <p class="hero-sub">
+            Dagelijks verse avondmaaltijden van gered voedsel, bereid door mensen in een re-integratietraject. Afhaal in Amsterdam voor <strong style="color:var(--c-orange);font-weight:700">€7,50</strong>.
+          </p>
+
+          <div style="display:flex;gap:16px;flex-wrap:wrap;opacity:0;animation:wordReveal 0.9s var(--ease-out) 1.7s forwards;">
+            <a href="menu.html" class="btn btn-primary">Bekijk het menu</a>
+            <a href="#calculator" class="btn btn-outline">Bereken je impact</a>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: kaart + stats -->
+        <div class="hero-right">
+
+          <div class="hero-map-wrap">
+            <div class="hero-map-label">
+              <i data-lucide="map-pin" style="width:13px;height:13px;stroke-width:2.5"></i>
+              Ophaallocatie &nbsp;·&nbsp; Amsterdam Oost
+            </div>
+            <iframe
+              class="hero-map"
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d9741.0!2d4.9400!3d52.3600!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1snl!2snl!4v1741500000000!5m2!1snl!2snl"
+            ></iframe>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-num">€7,50</div>
+              <div class="hero-stat-desc">per verse maaltijd</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">Amsterdam</div>
+              <div class="hero-stat-desc">afhaal, Amsterdam Oost</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-num">Dagelijks</div>
+              <div class="hero-stat-desc">vers bereid</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TICKER -->
+    <section class="ticker-section">
+      <div class="ticker-track">
+        <div class="ticker-item">Red voedsel</div>
+        <div class="ticker-item">Eet vers</div>
+        <div class="ticker-item">Maak impact</div>
+        <div class="ticker-item">Amsterdam</div>
+        <div class="ticker-item">Vanaf €7,-</div>
+        <div class="ticker-item">Gered voedsel</div>
+        <div class="ticker-item">Echte kansen</div>
+        <div class="ticker-item">Red voedsel</div>
+        <div class="ticker-item">Eet vers</div>
+        <div class="ticker-item">Maak impact</div>
+        <div class="ticker-item">Amsterdam</div>
+        <div class="ticker-item">Vanaf €7,-</div>
+      </div>
+    </section>
+
+    <!-- HOE HET WERKT -->
+    <section class="how-it-works reveal">
+      <div class="section-label">Hoe het werkt</div>
+      <h2>Drie stappen. Zo simpel.</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-icon">
+            <i data-lucide="calendar-check"></i>
+          </div>
+          <h3>Kies je maaltijd</h3>
+          <p>Bekijk het menu online en kies wat je wilt eten. Vandaag besteld, vandaag klaar.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-icon">
+            <i data-lucide="map-pin"></i>
+          </div>
+          <h3>Haal op in Amsterdam</h3>
+          <p>Onze keuken zit op een centrale locatie in Amsterdam Oost. Makkelijk op je fiets- of looproute.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-icon">
+            <i data-lucide="utensils"></i>
+          </div>
+          <h3>Geniet en maak impact</h3>
+          <p>Warm je maaltijd op in 3 minuten. Elke hap is gered voedsel en een kans voor iemand.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED MEALS -->
+    <section class="featured-meals reveal">
+      <div class="section-label">Het menu</div>
+      <h2>Bekijk onze maaltijden</h2>
+      <div class="meals-preview-grid">
+        <div class="meal-preview-card">
+          <div class="meal-image">
+            <img src="https://images.pexels.com/photos/8385550/pexels-photo-8385550.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Groentebowl met feta"/>
+            <span class="meal-tag vegetarisch">Vegetarisch</span>
+          </div>
+          <h3>Geroosterde groentebowl met feta</h3>
+          <p>Paprika, courgette en ui uit de oven met romige feta.</p>
+          <div class="meal-footer">
+            <span class="meal-price">€7,50</span>
+            <a href="menu.html" class="meal-link">Bekijk menu →</a>
+          </div>
+        </div>
+
+        <div class="meal-preview-card">
+          <div class="meal-image">
+            <img src="https://images.pexels.com/photos/1640769/pexels-photo-1640769.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Kikkererwten-curry"/>
+            <span class="meal-tag vegan">Vegan</span>
+          </div>
+          <h3>Kikkererwten-curry met rijst</h3>
+          <p>Romige curry van kikkererwten, kokosmelk en spinazie.</p>
+          <div class="meal-footer">
+            <span class="meal-price">€7,50</span>
+            <a href="menu.html" class="meal-link">Bekijk menu →</a>
+          </div>
+        </div>
+
+        <div class="meal-preview-card">
+          <div class="meal-image">
+            <img src="https://images.pexels.com/photos/6823336/pexels-photo-6823336.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Buddha bowl"/>
+            <span class="meal-tag vegan">Vegan</span>
+          </div>
+          <h3>Buddha bowl met hummus</h3>
+          <p>Kleurrijke bowl met hummus, groenten en tahini.</p>
+          <div class="meal-footer">
+            <span class="meal-price">€8,00</span>
+            <a href="menu.html" class="meal-link">Bekijk menu →</a>
+          </div>
+        </div>
+
+        <div class="meal-cta-card">
+          <div class="meal-cta-content">
+            <h3>Bekijk alle maaltijden</h3>
+            <p>10 verse opties dagelijks — alleen vegetarisch &amp; vegan.</p>
+            <a href="menu.html" class="btn btn-primary">Bekijk menu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT CALCULATOR -->
+    <section class="section-calculator reveal" id="calculator">
+      <div class="container">
+
+        <div style="text-align:center">
+          <span class="label">Jouw impact</span>
+          <h2 class="section-title">Wat betekent dit voor jou?</h2>
+          <p class="section-sub" style="margin:0 auto var(--sp-xl)">
+            Beweeg de slider en zie je persoonlijke jaarimpact als je bij Surplus Meals afhaalt.
+          </p>
+        </div>
+
+        <div class="calc-wrap">
+
+          <div class="slider-wrap">
+            <p class="calc-input-label">
+              Ik haal <strong id="mealsPerWeek">3</strong> avonden per week af
+            </p>
+            <input type="range" id="mealSlider" class="range-slider" min="1" max="7" value="3" aria-label="Aantal avonden per week"/>
+            <div class="slider-marks">
+              <span>1 avond</span>
+              <span>2</span>
+              <span>3</span>
+              <span>4</span>
+              <span>5</span>
+              <span>6</span>
+              <span>7 avonden</span>
+            </div>
+          </div>
+
+          <div class="calc-results">
+            <div class="calc-card calc-card--green">
+              <div class="calc-icon"><i data-lucide="leaf"></i></div>
+              <span class="calc-number" id="calcFood">62</span>
+              <span class="calc-unit">kg voedsel</span>
+              <p class="calc-desc">gered per jaar dat anders verspild was</p>
+            </div>
+            <div class="calc-card calc-card--dark">
+              <div class="calc-icon"><i data-lucide="cloud"></i></div>
+              <span class="calc-number" id="calcCO2">156</span>
+              <span class="calc-unit">kg CO₂</span>
+              <p class="calc-desc">bespaard per jaar dankzij minder voedselverspilling</p>
+            </div>
+            <div class="calc-card calc-card--orange">
+              <div class="calc-icon"><i data-lucide="euro"></i></div>
+              <span class="calc-number" id="calcMoney">1.326</span>
+              <span class="calc-unit">euro minder</span>
+              <p class="calc-desc">uitgegeven dan bij gemiddelde Thuisbezorgd-order (€18)</p>
+            </div>
+          </div>
+
+          <p class="calc-footnote">
+            Berekening: 0,4 kg voedsel per maaltijd × 2,5 kg CO₂/kg. Verschil met gem. Thuisbezorgd €18 (2025). Indicatief.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABONNEMENTEN -->
+    <section class="subscriptions-section reveal" id="abonnementen">
+      <div class="section-label">Abonnementen</div>
+      <h2>Bespaar met een maaltijdplan</h2>
+      <p class="sub-intro">Kies een vast plan en bespaar nog meer — op je portemonnee én op voedselverspilling.</p>
+      <div class="sub-grid">
+        <div class="sub-card">
+          <div class="sub-badge">Populair</div>
+          <h3>Basis</h3>
+          <div class="sub-price">€25<span>/week</span></div>
+          <p class="sub-meals">4 maaltijden per week</p>
+          <p class="sub-saving">Bespaar €5,- per week t.o.v. los bestellen</p>
+          <ul class="sub-features">
+            <li><i data-lucide="check" style="width:16px;height:16px"></i> Elke week 4 verse maaltijden</li>
+            <li><i data-lucide="check" style="width:16px;height:16px"></i> Mix van vegetarisch &amp; vegan</li>
+            <li><i data-lucide="check" style="width:16px;height:16px"></i> Flexibel pauzeren &amp; opzeggen</li>
+          </ul>
+          <a href="menu.html" class="btn btn-primary">Kies dit plan</a>
+        </div>
+        <div class="sub-card sub-card--featured">
+          <div class="sub-badge">Beste deal</div>
+          <h3>Compleet</h3>
+          <div class="sub-price">€40<span>/week</span></div>
+          <p class="sub-meals">7 maaltijden per week</p>
+          <p class="sub-saving">Bespaar €12,50 per week t.o.v. los bestellen</p>
+          <ul class="sub-features">
+            <li><i data-lucide="check" style="width:16px;height:16px"></i> Elke dag een verse maaltijd</li>
+            <li><i data-lucide="check" style="width:16px;height:16px"></i> Voorkeur aangeven voor menu</li>
+            <li><i data-lucide="check" style="width:16px;height:16px"></i> Flexibel pauzeren &amp; opzeggen</li>
+            <li><i data-lucide="check" style="width:16px;height:16px"></i> Gratis surprise maaltijd per maand</li>
+          </ul>
+          <a href="menu.html" class="btn btn-primary">Kies dit plan</a>
+        </div>
+        <div class="sub-card">
+          <h3>Flexibel</h3>
+          <div class="sub-price">€7,50<span>/maaltijd</span></div>
+          <p class="sub-meals">Los bestellen, geen verplichting</p>
+          <p class="sub-saving">Bestel wanneer je wilt</p>
+          <ul class="sub-features">
+            <li><i data-lucide="check" style="width:16px;height:16px"></i> Geen abonnement nodig</li>
+            <li><i data-lucide="check" style="width:16px;height:16px"></i> Direct bestellen via het menu</li>
+            <li><i data-lucide="check" style="width:16px;height:16px"></i> Ideaal om te proberen</li>
+          </ul>
+          <a href="menu.html" class="btn btn-outline">Bekijk menu</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT (concrete cijfers, geen vage claims) -->
+    <section class="impact-section reveal">
+      <div class="section-label">People · Planet · Plate</div>
+      <h2>Concrete impact, per maaltijd.</h2>
+      <div class="impact-counters">
+        <div class="impact-counter" style="position:relative;">
+          <div style="position:absolute;top:-8px;right:-8px;background:var(--c-green-mid);color:white;font-size:10px;font-weight:700;padding:4px 8px;border-radius:20px;letter-spacing:0.5px;">GEWOGEN</div>
+          <div class="counter-value">350g</div>
+          <div class="counter-label">gered voedsel per maaltijd</div>
+        </div>
+        <div class="impact-counter" style="position:relative;">
+          <div style="position:absolute;top:-8px;right:-8px;background:var(--c-green-mid);color:white;font-size:10px;font-weight:700;padding:4px 8px;border-radius:20px;letter-spacing:0.5px;">JAAR 1</div>
+          <div class="counter-value">1.500</div>
+          <div class="counter-label">kg gered voedsel (prognose)</div>
+        </div>
+        <div class="impact-counter">
+          <div class="counter-value">€7,50</div>
+          <div class="counter-label">per verse maaltijd</div>
+        </div>
+        <div class="impact-counter">
+          <div class="counter-value">3</div>
+          <div class="counter-label">re-integratieplekken</div>
+        </div>
+        <div class="impact-counter" style="position:relative;">
+          <div style="position:absolute;top:-8px;right:-8px;background:var(--c-orange);color:white;font-size:10px;font-weight:700;padding:4px 8px;border-radius:20px;letter-spacing:0.5px;">DOELSTELLING</div>
+          <div class="counter-value">80%</div>
+          <div class="counter-label">doorstroom naar vaste baan</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOUNDER STORY + PEOPLE HIGHLIGHT -->
+    <section class="founder-section reveal">
+      <div class="founder-grid">
+        <div class="founder-image">
+          <img src="assets/bryan.jpg" alt="Bryan Bakker, oprichter Surplus Meals"/>
+          <div class="founder-image-caption">Bryan Bakker — oprichter</div>
+        </div>
+        <div class="founder-text">
+          <div class="section-label">Het verhaal</div>
+          <h2>Waarom ik dit doe</h2>
+          <p>Ik ben Bryan Bakker. Ik studeer Creatief Impact Ondernemen aan de HvA en ik ben geobsedeerd door een getal: <strong>40%</strong>. Dat is het percentage voedsel dat in Europa verspild wordt — terwijl veel mensen moeite hebben om gezond te eten.</p>
+          <p>Surplus Meals is het antwoord: verse maaltijden van gered voedsel, bereid door mensen die een nieuwe kans verdienen. In onze keuken werken medewerkers via re-integratietrajecten. Ze volgen een duaal traject — betaald werk en een kookopleiding — begeleid door een maatschappelijk werker. Ze vertrekken niet alleen met ervaring, maar met een diploma.</p>
+          <blockquote class="founder-quote">
+            "Als je vers eten kunt redden en tegelijk mensen een kans geeft — dan is ondernemen geen keuze, het is een verantwoordelijkheid."
+          </blockquote>
+          <a href="over-ons.html" class="btn btn-primary" style="margin-top:8px">Lees het volledige verhaal</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner reveal">
+      <div class="cta-content">
+        <h2>Klaar om te bestellen?</h2>
+        <p>Bekijk het menu en bestel vandaag nog een verse maaltijd.</p>
+        <a href="menu.html" class="btn btn-primary">Bekijk het menu →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">Surplus<span>Meals</span></div>
+        <p class="footer-tagline">Verse maaltijden van gered voedsel.<br/>Amsterdam, sinds 2026.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Bestellen</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:info@surplusmeals.nl">info@surplusmeals.nl</a>
+        <a href="tel:+31612345678">+31 6 1234 5678</a>
+        <p>Amsterdam Oost</p>
+      </div>
+      <div class="footer-col">
+        <h4>Blijf op de hoogte</h4>
+        <form class="footer-signup" onsubmit="event.preventDefault(); this.innerHTML='<p style=color:var(--c-green-light)>Bedankt!</p>'">
+          <input type="email" placeholder="jouw@email.nl" class="footer-input" required/>
+          <button type="submit" class="btn btn-primary" style="padding:12px 20px;font-size:13px">Aanmelden</button>
+        </form>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram" style="width:18px;height:18px"></i></a>
+          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" style="width:18px;height:18px"></i></a>
+          <a href="#" aria-label="Facebook"><i data-lucide="facebook" style="width:18px;height:18px"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Surplus Meals — Amsterdam. Alle rechten voorbehouden.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacybeleid</a>
+        <a href="#">Voorwaarden</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Terug naar boven">
+    <i data-lucide="chevron-up" style="width:20px;height:20px"></i>
+  </button>
+
+  <script src="js/cart.js"></script>
+  <script src="js/calculator.js"></script>
+  <script>
+    lucide.createIcons();
+    new ImpactCalculator();
+  </script>
+</body>
+</html>

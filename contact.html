@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Contact Surplus Meals — Vragen, feedback of samenwerking"/>
+  <title>Contact | Surplus Meals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+</head>
+<body data-page="contact">
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <nav class="site-nav" id="siteNav">
+    <a class="nav-logo" href="index.html">Surplus<span>Meals</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="nav-link" data-page="index">Home</a>
+      <a href="menu.html" class="nav-link" data-page="menu">Bestellen</a>
+      <a href="over-ons.html" class="nav-link" data-page="over-ons">Over ons</a>
+      <a href="impact.html" class="nav-link" data-page="impact">Impact</a>
+      <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="menu.html" class="cart-btn" id="cartBtn" title="Winkelwagen">
+        <i data-lucide="shopping-bag" style="width:20px;height:20px"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+      <a href="menu.html" class="nav-cta">Bestel nu</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" data-page="index">Home</a>
+    <a href="menu.html" data-page="menu">Bestellen</a>
+    <a href="over-ons.html" data-page="over-ons">Over ons</a>
+    <a href="impact.html" data-page="impact">Impact</a>
+    <a href="contact.html" data-page="contact">Contact</a>
+    <a href="menu.html" class="mobile-nav-cta">Bestel nu</a>
+  </div>
+
+  <main>
+    <!-- CONTACT HEADER -->
+    <section class="contact-header reveal">
+      <h1>Contact</h1>
+      <p>Vragen, feedback of samenwerken? We horen graag van je.</p>
+    </section>
+
+    <!-- CONTACT LAYOUT -->
+    <div class="contact-layout reveal">
+      <!-- LEFT: FORM -->
+      <div class="contact-form">
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="contactName">Naam</label>
+            <input type="text" id="contactName" name="name" required/>
+          </div>
+          <div class="form-group">
+            <label for="contactEmail">E-mailadres</label>
+            <input type="email" id="contactEmail" name="email" required/>
+          </div>
+          <div class="form-group">
+            <label for="contactSubject">Onderwerp</label>
+            <select id="contactSubject" name="subject" required>
+              <option value="">Kies een onderwerp</option>
+              <option value="bestelling">Vraag over bestelling</option>
+              <option value="samenwerking">Samenwerken</option>
+              <option value="feedback">Feedback</option>
+              <option value="media">Pers & media</option>
+              <option value="overig">Overig</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="contactMessage">Bericht</label>
+            <textarea id="contactMessage" name="message" rows="6" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-large">Verstuur bericht</button>
+        </form>
+      </div>
+
+      <!-- RIGHT: CONTACT INFO -->
+      <div class="contact-info">
+        <div class="info-card">
+          <h3>Contact gegevens</h3>
+          <div class="info-item">
+            <strong>E-mail</strong>
+            <a href="mailto:info@surplusmeals.nl">info@surplusmeals.nl</a>
+          </div>
+          <div class="info-item">
+            <strong>Telefoon</strong>
+            <a href="tel:+31612345678">+31 6 1234 5678</a>
+          </div>
+          <div class="info-item">
+            <strong>Adres</strong>
+            <p>Amsterdam Oost, Amsterdam</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <h3>Openingstijden</h3>
+          <ul class="opening-hours">
+            <li>
+              <span>Ma – Vr</span>
+              <span>11:00 – 20:00</span>
+            </li>
+            <li>
+              <span>Zaterdag</span>
+              <span>12:00 – 18:00</span>
+            </li>
+            <li>
+              <span>Zondag</span>
+              <span>Gesloten</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="map-placeholder">
+          <i data-lucide="map-pin"></i>
+          <p>Amsterdam Oost</p>
+        </div>
+
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">
+            <i data-lucide="instagram"></i>
+          </a>
+          <a href="#" aria-label="LinkedIn">
+            <i data-lucide="linkedin"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section reveal">
+      <h2>Veelgestelde vragen</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Wat is Surplus Meals?</span>
+            <i data-lucide="chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Surplus Meals maakt dagelijks verse takeaway-maaltijden van gered voedsel in Amsterdam. We kopen overschotten in bij boeren, groothandels en bakkerijen en bereiden er gezonde maaltijden van.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Waar kan ik mijn maaltijd ophalen?</span>
+            <i data-lucide="chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Onze keuken zit in Amsterdam Oost. Het exacte adres vind je bij het afrekenen. We zitten op een centrale locatie, makkelijk bereikbaar met fiets of OV.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Kan ik ook laten bezorgen?</span>
+            <i data-lucide="chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Op dit moment bieden we alleen afhaal aan. We onderzoeken bezorgopties voor de toekomst.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Zijn jullie maaltijden gezond?</span>
+            <i data-lucide="chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Ja! Al onze maaltijden zijn vers bereid met veel groenten en volwaardige ingrediënten. We hebben vegetarische, veganistische en vis/vlees opties.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Hoe zit het met allergieën?</span>
+            <i data-lucide="chevron-down"></i>
+          </button>
+          <div class="faq-answer">
+            <p>Je kunt bij het bestellen een opmerking plaatsen over allergieën. Neem bij twijfel contact met ons op. We werken met een open keuken en kunnen niet garanderen dat maaltijden volledig allergeen-vrij zijn.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">Surplus<span>Meals</span></div>
+        <p class="footer-tagline">Verse maaltijden van gered voedsel.<br/>Amsterdam, sinds 2026.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Bestellen</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:info@surplusmeals.nl">info@surplusmeals.nl</a>
+        <a href="tel:+31612345678">+31 6 1234 5678</a>
+        <p>Amsterdam Oost</p>
+      </div>
+      <div class="footer-col">
+        <h4>Blijf op de hoogte</h4>
+        <form class="footer-signup" onsubmit="event.preventDefault(); this.innerHTML='<p style=color:var(--c-green-light)>Bedankt!</p>'">
+          <input type="email" placeholder="jouw@email.nl" class="footer-input" required/>
+          <button type="submit" class="btn btn-primary" style="padding:12px 20px;font-size:13px">Aanmelden</button>
+        </form>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram" style="width:18px;height:18px"></i></a>
+          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" style="width:18px;height:18px"></i></a>
+          <a href="#" aria-label="Facebook"><i data-lucide="facebook" style="width:18px;height:18px"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Surplus Meals — Amsterdam. Alle rechten voorbehouden.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacybeleid</a>
+        <a href="#">Voorwaarden</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Terug naar boven">
+    <i data-lucide="chevron-up" style="width:20px;height:20px"></i>
+  </button>
+
+  <script src="js/cart.js"></script>
+  <script>
+    lucide.createIcons();
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', function() {
+        const item = this.parentElement;
+        const isOpen = item.classList.contains('open');
+
+        // Close all other items
+        document.querySelectorAll('.faq-item').forEach(faq => {
+          faq.classList.remove('open');
+        });
+
+        // Toggle current item
+        if (!isOpen) {
+          item.classList.add('open');
+        }
+      });
+    });
+
+    // Contact form submission
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(this);
+      // In a real application, this would send data to a server
+      alert('Bedankt voor je bericht! We nemen zo snel mogelijk contact op.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>

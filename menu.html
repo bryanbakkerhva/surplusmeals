@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Bestel vers bereid eten van gered voedsel in Amsterdam. Vegetarisch en vegan maaltijden, afhalen vanaf €7,50"/>
+  <title>Bestellen | Surplus Meals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+</head>
+<body data-page="menu">
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <nav class="site-nav" id="siteNav">
+    <a class="nav-logo" href="index.html">Surplus<span>Meals</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="nav-link" data-page="index">Home</a>
+      <a href="menu.html" class="nav-link" data-page="menu">Bestellen</a>
+      <a href="over-ons.html" class="nav-link" data-page="over-ons">Over ons</a>
+      <a href="impact.html" class="nav-link" data-page="impact">Impact</a>
+      <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="menu.html" class="cart-btn" id="cartBtn" title="Winkelwagen">
+        <i data-lucide="shopping-bag" style="width:20px;height:20px"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+      <a href="menu.html" class="nav-cta">Bestel nu</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" data-page="index">Home</a>
+    <a href="menu.html" data-page="menu">Bestellen</a>
+    <a href="over-ons.html" data-page="over-ons">Over ons</a>
+    <a href="impact.html" data-page="impact">Impact</a>
+    <a href="contact.html" data-page="contact">Contact</a>
+    <a href="menu.html" class="mobile-nav-cta">Bestel nu</a>
+  </div>
+
+  <main>
+    <!-- MENU HEADER -->
+    <section class="menu-header reveal">
+      <h1>Ons menu</h1>
+      <p>Dagelijks vers bereid van geredde ingrediënten. Kies je maaltijd en haal op in Amsterdam.</p>
+    </section>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all">Alles</button>
+      <button class="filter-btn" data-filter="vegetarisch">Vegetarisch</button>
+      <button class="filter-btn" data-filter="vegan">Vegan</button>
+      <button class="filter-btn" data-filter="wisselend">Wisselend</button>
+    </div>
+
+    <!-- MEALS GRID -->
+    <div class="meals-grid" id="mealsGrid"></div>
+
+    <!-- HOW ORDERING WORKS -->
+    <section class="ordering-info reveal">
+      <h2>Hoe werkt bestellen?</h2>
+      <div class="info-grid">
+        <div class="info-card">
+          <div class="info-icon">
+            <i data-lucide="shopping-cart"></i>
+          </div>
+          <h3>1. Kies je maaltijd</h3>
+          <p>Selecteer de maaltijden die je wilt. Voeg ze toe aan je winkelwagen.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">
+            <i data-lucide="truck"></i>
+          </div>
+          <h3>2. Bestel online</h3>
+          <p>Ga naar je winkelwagen en ronde je bestelling af. Betaal via iDEAL, creditcard of contant.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">
+            <i data-lucide="clock"></i>
+          </div>
+          <h3>3. Haal op</h3>
+          <p>Haal je maaltijd op op het afgesproken moment in Amsterdam Oost. Vers bereid en klaar!</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FLOATING CART -->
+  <div class="floating-cart" id="floatingCart">
+    <a href="checkout.html" class="floating-cart-content" onclick="event.preventDefault(); navigateWithCart('checkout.html');">
+      <div class="floating-cart-info">
+        <i data-lucide="shopping-bag" style="width:20px;height:20px"></i>
+        <span id="floatingCartCount">0 maaltijden</span>
+      </div>
+      <div class="floating-cart-total">
+        <span id="floatingCartTotal">€0,00</span>
+        <i data-lucide="arrow-right" style="width:18px;height:18px"></i>
+      </div>
+    </a>
+  </div>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">Surplus<span>Meals</span></div>
+        <p class="footer-tagline">Verse maaltijden van gered voedsel.<br/>Amsterdam, sinds 2026.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Bestellen</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:info@surplusmeals.nl">info@surplusmeals.nl</a>
+        <a href="tel:+31612345678">+31 6 1234 5678</a>
+        <p>Amsterdam Oost</p>
+      </div>
+      <div class="footer-col">
+        <h4>Blijf op de hoogte</h4>
+        <form class="footer-signup" onsubmit="event.preventDefault(); this.innerHTML='<p style=color:var(--c-green-light)>Bedankt!</p>'">
+          <input type="email" placeholder="jouw@email.nl" class="footer-input" required/>
+          <button type="submit" class="btn btn-primary" style="padding:12px 20px;font-size:13px">Aanmelden</button>
+        </form>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram" style="width:18px;height:18px"></i></a>
+          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" style="width:18px;height:18px"></i></a>
+          <a href="#" aria-label="Facebook"><i data-lucide="facebook" style="width:18px;height:18px"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Surplus Meals — Amsterdam. Alle rechten voorbehouden.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacybeleid</a>
+        <a href="#">Voorwaarden</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Terug naar boven">
+    <i data-lucide="chevron-up" style="width:20px;height:20px"></i>
+  </button>
+
+  <script src="js/cart.js"></script>
+  <script>lucide.createIcons();</script>
+</body>
+</html>

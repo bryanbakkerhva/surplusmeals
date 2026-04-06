@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Surplus Meals Impact Dashboard — Wekelijks gewogen, transparant gedeeld. Bekijk hoeveel voedsel we redden, CO2 we besparen en mensen we helpen."/>
+  <title>Impact Dashboard | Surplus Meals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/sections.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+  <style>
+    /* ── Impact Dashboard Styles ── */
+    .impact-hero {
+      background: var(--c-green-dark);
+      padding: var(--sp-3xl) var(--sp-md) var(--sp-xl);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .impact-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 500px 400px at 20% 80%, rgba(45,106,79,0.3), transparent),
+        radial-gradient(ellipse 400px 300px at 80% 20%, rgba(224,123,57,0.1), transparent);
+      pointer-events: none;
+    }
+    .impact-hero .badge { margin-bottom: var(--sp-md); }
+    .impact-hero h1 {
+      font-family: var(--f-serif);
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--c-cream);
+      margin-bottom: var(--sp-sm);
+      position: relative;
+    }
+    .impact-hero h1 span { color: var(--c-orange); }
+    .impact-hero p {
+      font-size: 1.05rem;
+      color: var(--c-green-light);
+      max-width: 600px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    /* ── QR Explainer ── */
+    .qr-explainer {
+      background: var(--c-cream);
+      padding: var(--sp-xl) var(--sp-md);
+    }
+    .qr-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-lg);
+      align-items: center;
+    }
+    .qr-text h2 {
+      font-family: var(--f-serif);
+      font-size: 1.8rem;
+      color: var(--c-green-dark);
+      margin-bottom: var(--sp-sm);
+    }
+    .qr-text p {
+      color: var(--c-gray);
+      line-height: 1.7;
+      margin-bottom: var(--sp-sm);
+    }
+    .qr-visual {
+      display: flex;
+      justify-content: center;
+    }
+    .qr-mockup {
+      background: white;
+      border-radius: var(--r-lg);
+      padding: var(--sp-md);
+      box-shadow: var(--shadow-lg);
+      max-width: 280px;
+      width: 100%;
+    }
+    .qr-mockup-header {
+      display: flex;
+      align-items: center;
+      gap: var(--sp-xs);
+      margin-bottom: var(--sp-sm);
+      padding-bottom: var(--sp-xs);
+      border-bottom: 1px solid var(--c-border);
+    }
+    .qr-mockup-header .dot {
+      width: 32px;
+      height: 32px;
+      background: var(--c-green-dark);
+      border-radius: var(--r-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--c-green-light);
+      font-size: 0.75rem;
+    }
+    .qr-mockup-header span {
+      font-weight: 600;
+      color: var(--c-green-dark);
+      font-size: 0.85rem;
+    }
+    .qr-mockup-body p {
+      font-size: 0.8rem;
+      color: var(--c-gray);
+      line-height: 1.5;
+      margin-bottom: var(--sp-xs);
+    }
+    .qr-mockup-stat {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 4px;
+    }
+    .qr-mockup-stat .num {
+      font-family: var(--f-serif);
+      font-size: 1.6rem;
+      color: var(--c-orange);
+      font-weight: 400;
+    }
+    .qr-mockup-stat .unit {
+      font-size: 0.75rem;
+      color: var(--c-gray);
+    }
+    .qr-mockup-badge {
+      display: inline-block;
+      background: var(--c-green-pale);
+      color: var(--c-green);
+      font-size: 0.65rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: var(--r-full);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: var(--sp-xs);
+    }
+
+    /* ── Live Stats Cards ── */
+    .stats-section {
+      padding: var(--sp-xl) var(--sp-md);
+      background: white;
+    }
+    .stats-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .stats-section h2 {
+      font-family: var(--f-serif);
+      font-size: 1.8rem;
+      color: var(--c-green-dark);
+      text-align: center;
+      margin-bottom: var(--sp-xs);
+    }
+    .stats-section .subtitle {
+      text-align: center;
+      color: var(--c-gray);
+      margin-bottom: var(--sp-lg);
+      font-size: 0.95rem;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: var(--sp-md);
+      margin-bottom: var(--sp-xl);
+    }
+    .stat-card {
+      background: var(--c-cream);
+      border-radius: var(--r-md);
+      padding: var(--sp-md);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+    }
+    .stat-card.planet::before { background: var(--c-green); }
+    .stat-card.people::before { background: var(--c-orange); }
+    .stat-card.profit::before { background: var(--c-green-dark); }
+
+    .stat-card .icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--r-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto var(--sp-xs);
+    }
+    .stat-card.planet .icon-wrap { background: rgba(45,106,79,0.1); color: var(--c-green); }
+    .stat-card.people .icon-wrap { background: rgba(224,123,57,0.1); color: var(--c-orange); }
+    .stat-card.profit .icon-wrap { background: rgba(27,67,50,0.1); color: var(--c-green-dark); }
+
+    .stat-card .number {
+      font-family: var(--f-serif);
+      font-size: 2.2rem;
+      color: var(--c-green-dark);
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+    .stat-card .label {
+      font-size: 0.8rem;
+      color: var(--c-gray);
+      font-weight: 500;
+    }
+    .stat-card .tag {
+      display: inline-block;
+      font-size: 0.6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 2px 8px;
+      border-radius: var(--r-full);
+      margin-top: var(--sp-xs);
+    }
+    .stat-card.planet .tag { background: var(--c-green-pale); color: var(--c-green); }
+    .stat-card.people .tag { background: var(--c-orange-light); color: var(--c-orange); }
+    .stat-card.profit .tag { background: var(--c-green-pale); color: var(--c-green-dark); }
+
+    /* ── Weekly Chart ── */
+    .chart-section {
+      padding: 0 var(--sp-md) var(--sp-xl);
+      background: white;
+    }
+    .chart-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .chart-container {
+      background: var(--c-green-dark);
+      border-radius: var(--r-lg);
+      padding: var(--sp-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    .chart-container::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 600px 300px at 80% 90%, rgba(45,106,79,0.3), transparent);
+      pointer-events: none;
+    }
+    .chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: var(--sp-md);
+      position: relative;
+    }
+    .chart-header h3 {
+      font-family: var(--f-serif);
+      font-size: 1.3rem;
+      color: var(--c-cream);
+    }
+    .chart-legend {
+      display: flex;
+      gap: var(--sp-sm);
+    }
+    .chart-legend span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      color: var(--c-green-light);
+    }
+    .chart-legend .dot-kg { width: 8px; height: 8px; border-radius: 50%; background: var(--c-orange); }
+    .chart-legend .dot-meals { width: 8px; height: 8px; border-radius: 50%; background: var(--c-green-light); }
+
+    .chart-bars {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 8px;
+      align-items: end;
+      height: 240px;
+      position: relative;
+      padding-bottom: 32px;
+      border-bottom: 1px solid rgba(183,228,199,0.15);
+    }
+    .chart-bar-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100%;
+      justify-content: flex-end;
+      position: relative;
+    }
+    .chart-bar-pair {
+      display: flex;
+      gap: 3px;
+      align-items: flex-end;
+      width: 100%;
+      justify-content: center;
+    }
+    .bar {
+      width: 28px;
+      border-radius: 4px 4px 0 0;
+      transition: height 0.6s var(--ease-out);
+      position: relative;
+    }
+    .bar.kg { background: var(--c-orange); }
+    .bar.meals { background: var(--c-green-light); }
+    .bar:hover { opacity: 0.85; }
+    .bar-value {
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.6rem;
+      color: var(--c-cream);
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .bar:hover .bar-value { opacity: 1; }
+
+    .chart-bar-label {
+      font-size: 0.65rem;
+      color: var(--c-green-light);
+      margin-top: 8px;
+      text-align: center;
+      position: absolute;
+      bottom: -28px;
+      width: 100%;
+    }
+
+    /* ── Weekly breakdown table ── */
+    .table-section {
+      padding: var(--sp-xl) var(--sp-md);
+      background: var(--c-cream);
+    }
+    .table-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+    }
+    .table-section h2 {
+      font-family: var(--f-serif);
+      font-size: 1.5rem;
+      color: var(--c-green-dark);
+      margin-bottom: var(--sp-sm);
+    }
+    .impact-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: var(--r-md);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+    .impact-table thead {
+      background: var(--c-green-dark);
+    }
+    .impact-table th {
+      padding: 14px 16px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--c-green-light);
+      text-align: left;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .impact-table td {
+      padding: 12px 16px;
+      font-size: 0.85rem;
+      color: var(--c-gray-dark);
+      border-bottom: 1px solid var(--c-border);
+    }
+    .impact-table tbody tr:hover {
+      background: var(--c-green-pale);
+    }
+    .impact-table .highlight {
+      font-weight: 600;
+      color: var(--c-green-dark);
+    }
+    .impact-table .trend {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .impact-table .trend.up { color: var(--c-green); }
+    .impact-table .trend.stable { color: var(--c-gray-light); }
+
+    /* Donation section */
+    .donation-section {
+      padding: var(--sp-xl) var(--sp-md);
+      background: white;
+    }
+    .donation-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--sp-lg);
+    }
+    .donation-card {
+      background: var(--c-cream);
+      border-radius: var(--r-lg);
+      padding: var(--sp-lg);
+      position: relative;
+      overflow: hidden;
+    }
+    .donation-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--c-orange);
+    }
+    .donation-card h3 {
+      font-family: var(--f-serif);
+      font-size: 1.3rem;
+      color: var(--c-green-dark);
+      margin-bottom: var(--sp-xs);
+    }
+    .donation-card p {
+      font-size: 0.9rem;
+      color: var(--c-gray);
+      line-height: 1.6;
+      margin-bottom: var(--sp-sm);
+    }
+    .donation-stat {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+    .donation-stat .big {
+      font-family: var(--f-serif);
+      font-size: 2rem;
+      color: var(--c-orange);
+    }
+    .donation-stat .desc {
+      font-size: 0.85rem;
+      color: var(--c-gray-dark);
+    }
+
+    /* Method note */
+    .method-section {
+      padding: var(--sp-lg) var(--sp-md);
+      background: var(--c-green-pale);
+    }
+    .method-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      gap: var(--sp-sm);
+    }
+    .method-inner .icon-wrap {
+      width: 36px;
+      height: 36px;
+      min-width: 36px;
+      background: var(--c-green);
+      border-radius: var(--r-full);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+    }
+    .method-inner p {
+      font-size: 0.85rem;
+      color: var(--c-gray-dark);
+      line-height: 1.6;
+    }
+    .method-inner strong { color: var(--c-green-dark); }
+
+    @media (max-width: 768px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .qr-inner { grid-template-columns: 1fr; }
+      .donation-inner { grid-template-columns: 1fr; }
+      .chart-bars { grid-template-columns: repeat(4, 1fr); height: 180px; }
+      .chart-bar-group:nth-child(n+5) { display: none; }
+    }
+  </style>
+</head>
+<body data-page="impact">
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <nav class="site-nav" id="siteNav">
+    <a class="nav-logo" href="index.html">Surplus<span>Meals</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="nav-link" data-page="index">Home</a>
+      <a href="menu.html" class="nav-link" data-page="menu">Bestellen</a>
+      <a href="over-ons.html" class="nav-link" data-page="over-ons">Over ons</a>
+      <a href="impact.html" class="nav-link active" data-page="impact">Impact</a>
+      <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="menu.html" class="cart-btn" id="cartBtn" title="Winkelwagen">
+        <i data-lucide="shopping-bag" style="width:20px;height:20px"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+      <a href="menu.html" class="nav-cta">Bestel nu</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" data-page="index">Home</a>
+    <a href="menu.html" data-page="menu">Bestellen</a>
+    <a href="over-ons.html" data-page="over-ons">Over ons</a>
+    <a href="impact.html" data-page="impact">Impact</a>
+    <a href="contact.html" data-page="contact">Contact</a>
+    <a href="menu.html" class="mobile-nav-cta">Bestel nu</a>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="impact-hero">
+      <span class="badge">Wekelijks gewogen &amp; gepubliceerd</span>
+      <h1>Impact <span>Dashboard</span></h1>
+      <p>Elke maaltijd wordt gewogen. Elke kilo wordt geregistreerd. Geen vage claims, alleen cijfers die je zelf kunt controleren.</p>
+    </section>
+
+    <!-- QR CODE UITLEG -->
+    <section class="qr-explainer">
+      <div class="qr-inner">
+        <div class="qr-text">
+          <h2>Scan. Zie je impact.</h2>
+          <p>Op elke maaltijd zit een QR-code. Scan hem en je ziet precies welke ingredienten zijn gered, waar ze vandaan komen, en hoeveel gram voedsel jij met deze bestelling uit de afvalstroom hebt gehaald.</p>
+          <p>Geen marketing. Geen schattingen. Gewogen feiten.</p>
+        </div>
+        <div class="qr-visual">
+          <div class="qr-mockup">
+            <div class="qr-mockup-header">
+              <div class="dot"><i data-lucide="leaf" style="width:16px;height:16px"></i></div>
+              <span>Jouw maaltijd #0247</span>
+            </div>
+            <div class="qr-mockup-body">
+              <p>Vandaag gered voor jou:</p>
+              <div class="qr-mockup-stat">
+                <span class="num">347</span>
+                <span class="unit">gram gered voedsel</span>
+              </div>
+              <p style="font-size:0.7rem;color:var(--c-gray-light);margin-top:8px;">Ingredienten vandaag:</p>
+              <p style="font-size:0.75rem;color:var(--c-gray-dark);">Courgette (Food Center), kikkererwten (InstockMarket), paprika (Voedselcirkel), rijst (basisinkoop)</p>
+              <div class="qr-mockup-badge">Gewogen op 24 mrt 2026</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOTAALCIJFERS -->
+    <section class="stats-section">
+      <div class="stats-inner">
+        <h2>Onze impact tot nu toe</h2>
+        <p class="subtitle">Bijgewerkt: week 12, 2026</p>
+
+        <div class="stats-grid">
+          <div class="stat-card planet">
+            <div class="icon-wrap"><i data-lucide="scale" style="width:22px;height:22px"></i></div>
+            <div class="number">187,4</div>
+            <div class="label">kg voedsel gered</div>
+            <span class="tag">Gewogen</span>
+          </div>
+          <div class="stat-card planet">
+            <div class="icon-wrap"><i data-lucide="cloud-off" style="width:22px;height:22px"></i></div>
+            <div class="number">468</div>
+            <div class="label">kg CO2 bespaard</div>
+            <span class="tag">Berekend</span>
+          </div>
+          <div class="stat-card people">
+            <div class="icon-wrap"><i data-lucide="heart-handshake" style="width:22px;height:22px"></i></div>
+            <div class="number">84</div>
+            <div class="label">porties gedoneerd</div>
+            <span class="tag">Geregistreerd</span>
+          </div>
+          <div class="stat-card profit">
+            <div class="icon-wrap"><i data-lucide="utensils" style="width:22px;height:22px"></i></div>
+            <div class="number">536</div>
+            <div class="label">maaltijden bereid</div>
+            <span class="tag">Geregistreerd</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BAR CHART -->
+    <section class="chart-section">
+      <div class="chart-inner">
+        <div class="chart-container">
+          <div class="chart-header">
+            <h3>Wekelijkse resultaten</h3>
+            <div class="chart-legend">
+              <span><span class="dot-kg"></span> kg gered voedsel</span>
+              <span><span class="dot-meals"></span> maaltijden bereid</span>
+            </div>
+          </div>
+          <div class="chart-bars" id="chartBars">
+            <!-- Filled by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DETAIL TABLE -->
+    <section class="table-section">
+      <div class="table-inner">
+        <h2>Weekoverzicht</h2>
+        <table class="impact-table">
+          <thead>
+            <tr>
+              <th>Week</th>
+              <th>Maaltijden</th>
+              <th>Kg gered</th>
+              <th>Kg CO2 bespaard</th>
+              <th>Porties gedoneerd</th>
+              <th>Trend</th>
+            </tr>
+          </thead>
+          <tbody id="tableBody">
+            <!-- Filled by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- DONATIES -->
+    <section class="donation-section">
+      <div class="donation-inner">
+        <div class="donation-card">
+          <h3>Leger des Heils Amsterdam</h3>
+          <p>Overproductie gaat dezelfde dag nog vers naar de opvang. Niet ingevroren, niet bewaard. Vers bereid, vers geleverd.</p>
+          <div class="donation-stat">
+            <span class="big">52</span>
+            <span class="desc">porties gedoneerd afgelopen 8 weken</span>
+          </div>
+        </div>
+        <div class="donation-card">
+          <h3>Voedselbank Amsterdam</h3>
+          <p>Porties die overblijven na de ophaalwindow gaan naar de Voedselbank. Geen verspilling, ook niet van onze eigen productie.</p>
+          <div class="donation-stat">
+            <span class="big">32</span>
+            <span class="desc">porties gedoneerd afgelopen 8 weken</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- METHODE -->
+    <section class="method-section">
+      <div class="method-inner">
+        <div class="icon-wrap"><i data-lucide="info" style="width:18px;height:18px"></i></div>
+        <p><strong>Hoe meten we dit?</strong> Alle ingredienten worden bij binnenkomst gewogen op een geijkte keukenweegschaal. Het verschil tussen ingekocht gewicht en bereid gewicht wordt wekelijks geregistreerd. CO2-besparing is berekend op basis van de WRAP-methode (2,5 kg CO2 per kg voedselverspilling). Donaties worden per portie geregistreerd bij aflevering. Alle data is verifieerbaar via onze weeklogboeken.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background:var(--c-green-dark);padding:var(--sp-lg) var(--sp-md);text-align:center;">
+    <p style="font-family:var(--f-serif);font-size:1.2rem;color:var(--c-cream);margin-bottom:8px;">Surplus<span style="color:var(--c-orange);">Meals</span></p>
+    <p style="font-size:0.8rem;color:var(--c-gray-light);">Red voedsel. Eet vers. Maak impact.</p>
+  </footer>
+
+  <script>
+    // ── Weekly data (simulated first 8 weeks of operations) ──
+    const weeklyData = [
+      { week: "Wk 5",  date: "27 jan - 2 feb",   meals: 38,  kg: 13.3, co2: 33.3,  donated: 6  },
+      { week: "Wk 6",  date: "3 - 9 feb",        meals: 45,  kg: 15.8, co2: 39.4,  donated: 8  },
+      { week: "Wk 7",  date: "10 - 16 feb",      meals: 52,  kg: 18.2, co2: 45.5,  donated: 9  },
+      { week: "Wk 8",  date: "17 - 23 feb",      meals: 61,  kg: 21.4, co2: 53.4,  donated: 11 },
+      { week: "Wk 9",  date: "24 feb - 2 mrt",   meals: 68,  kg: 23.8, co2: 59.5,  donated: 12 },
+      { week: "Wk 10", date: "3 - 9 mrt",        meals: 79,  kg: 27.7, co2: 69.1,  donated: 14 },
+      { week: "Wk 11", date: "10 - 16 mrt",      meals: 88,  kg: 30.8, co2: 77.0,  donated: 12 },
+      { week: "Wk 12", date: "17 - 23 mrt",      meals: 105, kg: 36.4, co2: 91.0,  donated: 12 },
+    ];
+
+    // ── Render bar chart ──
+    const chartBars = document.getElementById('chartBars');
+    const maxMeals = Math.max(...weeklyData.map(w => w.meals));
+    const maxKg = Math.max(...weeklyData.map(w => w.kg));
+    const maxVal = Math.max(maxMeals, maxKg * 3); // normalize
+
+    weeklyData.forEach(w => {
+      const group = document.createElement('div');
+      group.className = 'chart-bar-group';
+
+      const pair = document.createElement('div');
+      pair.className = 'chart-bar-pair';
+
+      const barKg = document.createElement('div');
+      barKg.className = 'bar kg';
+      barKg.style.height = Math.max((w.kg / maxKg) * 180, 8) + 'px';
+      barKg.innerHTML = `<span class="bar-value">${w.kg} kg</span>`;
+
+      const barMeals = document.createElement('div');
+      barMeals.className = 'bar meals';
+      barMeals.style.height = Math.max((w.meals / maxMeals) * 180, 8) + 'px';
+      barMeals.innerHTML = `<span class="bar-value">${w.meals}</span>`;
+
+      pair.appendChild(barKg);
+      pair.appendChild(barMeals);
+      group.appendChild(pair);
+
+      const label = document.createElement('div');
+      label.className = 'chart-bar-label';
+      label.textContent = w.week;
+      group.appendChild(label);
+
+      chartBars.appendChild(group);
+    });
+
+    // ── Render table ──
+    const tableBody = document.getElementById('tableBody');
+    weeklyData.forEach((w, i) => {
+      const prev = i > 0 ? weeklyData[i - 1] : null;
+      const trend = prev ? ((w.kg - prev.kg) / prev.kg * 100).toFixed(0) : 0;
+      const trendClass = trend > 0 ? 'up' : 'stable';
+      const trendIcon = trend > 0 ? '\u25B2' : '\u25CF';
+
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td class="highlight">${w.week}<br><span style="font-size:0.7rem;color:var(--c-gray-light);font-weight:400;">${w.date}</span></td>
+        <td>${w.meals}</td>
+        <td class="highlight">${w.kg} kg</td>
+        <td>${w.co2} kg</td>
+        <td>${w.donated}</td>
+        <td><span class="trend ${trendClass}">${trendIcon} ${trend > 0 ? '+' : ''}${trend}%</span></td>
+      `;
+      tableBody.appendChild(row);
+    });
+
+    // ── Lucide icons ──
+    lucide.createIcons();
+
+    // ── Nav scroll behavior ──
+    const nav = document.getElementById('siteNav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    // ── Hamburger ──
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    if (hamburger && mobileNav) {
+      hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        mobileNav.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>

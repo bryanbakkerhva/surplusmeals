@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Over Surplus Meals — Hoe Bryan Bakker vers voedsel van verspilling redt en maaltijden maakt in Amsterdam"/>
+  <title>Over ons | Surplus Meals</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet"/>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/components.css"/>
+  <link rel="stylesheet" href="css/sections.css"/>
+  <link rel="stylesheet" href="css/pages.css"/>
+</head>
+<body data-page="over-ons">
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <nav class="site-nav" id="siteNav">
+    <a class="nav-logo" href="index.html">Surplus<span>Meals</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="nav-link" data-page="index">Home</a>
+      <a href="menu.html" class="nav-link" data-page="menu">Bestellen</a>
+      <a href="over-ons.html" class="nav-link" data-page="over-ons">Over ons</a>
+      <a href="impact.html" class="nav-link" data-page="impact">Impact</a>
+      <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="menu.html" class="cart-btn" id="cartBtn" title="Winkelwagen">
+        <i data-lucide="shopping-bag" style="width:20px;height:20px"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
+      <a href="menu.html" class="nav-cta">Bestel nu</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" data-page="index">Home</a>
+    <a href="menu.html" data-page="menu">Bestellen</a>
+    <a href="over-ons.html" data-page="over-ons">Over ons</a>
+    <a href="impact.html" data-page="impact">Impact</a>
+    <a href="contact.html" data-page="contact">Contact</a>
+    <a href="menu.html" class="mobile-nav-cta">Bestel nu</a>
+  </div>
+
+  <main>
+    <!-- ABOUT HERO -->
+    <section class="about-hero reveal">
+      <div class="hero-overlay"></div>
+      <img src="https://images.pexels.com/photos/3184183/pexels-photo-3184183.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Team aan het werk"/>
+      <div class="hero-content">
+        <h1>People. Planet. Plate.</h1>
+        <p style="color:rgba(255,255,255,0.85);font-size:18px;max-width:600px;margin:12px auto 0;font-weight:400;">Gered voedsel wordt een verse maaltijd. Gemaakt door mensen die een kans verdienen. In Amsterdam.</p>
+      </div>
+    </section>
+
+    <!-- FOUNDER STORY (prominent, first section) -->
+    <section class="story-section reveal">
+      <div class="story-content">
+        <div class="story-text">
+          <div class="section-label" style="margin-bottom:8px;">Het verhaal</div>
+          <h2>Waarom ik dit doe</h2>
+          <p>
+            Ik ben Bryan Bakker. Ik studeer Creatief Impact Ondernemen aan de HvA en ik ben geobsedeerd door een getal: <strong>40%</strong>. Dat is het percentage voedsel dat in Europa verspild wordt. Tegelijkertijd hebben veel mensen moeite om gezond te eten. Dat klopt niet.
+          </p>
+          <p>
+            Ik zag twee problemen die elkaars oplossing konden zijn. Het overschot van de één wordt het avondeten van de ander. Wat begon als frustratie werd Surplus Meals: verse maaltijden van gered voedsel, bereid door mensen die een nieuwe kans verdienen.
+          </p>
+          <blockquote style="border-left:3px solid var(--c-orange);padding:12px 20px;margin:20px 0;background:rgba(224,123,57,0.06);border-radius:0 8px 8px 0;font-style:italic;color:var(--c-green-dark);">
+            "Als je vers eten kunt redden en tegelijk mensen een kans geeft — dan is ondernemen geen keuze, het is een verantwoordelijkheid."
+          </blockquote>
+        </div>
+        <div class="story-image">
+          <img src="assets/bryan.jpg" alt="Bryan Bakker, oprichter Surplus Meals"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRIPLE IMPACT: PEOPLE, PLANET, PLATE -->
+    <section class="story-section story-section-reverse reveal" style="background:var(--c-green-pale);padding:60px 0;">
+      <div class="story-content" style="max-width:1100px;margin:0 auto;padding:0 40px;">
+        <div style="text-align:center;margin-bottom:40px;">
+          <div class="section-label">Ons model</div>
+          <h2 style="margin-bottom:12px;">Drie pijlers. Eén missie.</h2>
+          <p style="color:var(--c-text-light);max-width:640px;margin:0 auto;">Alles wat we doen draait om drie dingen: mensen vooruit helpen, de planeet ontlasten en lekker eten op tafel zetten.</p>
+        </div>
+        <div class="sources-grid" style="grid-template-columns:repeat(3,1fr);gap:24px;">
+          <div class="source-card" style="text-align:left;padding:28px;">
+            <div class="source-icon" style="background:var(--c-orange);">
+              <i data-lucide="heart-handshake" style="color:white"></i>
+            </div>
+            <h3 style="color:var(--c-green-dark);">People</h3>
+            <p>Onze keuken biedt werk aan mensen via re-integratietrajecten. Ze volgen een duaal traject: betaald werk + kookopleiding. Begeleid door een maatschappelijk werker. Ze vertrekken met een diploma en carrièreperspectief.</p>
+          </div>
+          <div class="source-card" style="text-align:left;padding:28px;">
+            <div class="source-icon" style="background:var(--c-green-mid);">
+              <i data-lucide="leaf" style="color:white"></i>
+            </div>
+            <h3 style="color:var(--c-green-dark);">Planet</h3>
+            <p>We redden voedsel dat anders verspild wordt: overschotten van boeren, groothandels en bakkerijen. Elke maaltijd bespaart ~1 kg CO₂. Overgebleven maaltijden doneren we aan het Leger des Heils.</p>
+          </div>
+          <div class="source-card" style="text-align:left;padding:28px;">
+            <div class="source-icon" style="background:var(--c-green-dark);">
+              <i data-lucide="utensils" style="color:white"></i>
+            </div>
+            <h3 style="color:var(--c-green-dark);">Plate</h3>
+            <p>Verse, vegetarische en vegan avondmaaltijden. Dagelijks bereid in Amsterdam. Afhalen voor €7,50. Geen kant-en-klaar uit een plastic bak, maar echt eten van echte ingrediënten.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIALE IMPACT — PEOPLE (updated with consult feedback) -->
+    <section class="social-impact-section reveal">
+      <div class="social-impact-content">
+        <div class="section-label">People</div>
+        <h2>Niet alleen een baan. Een toekomst.</h2>
+        <p class="social-intro">Onze keuken is een springplank. Mensen met afstand tot de arbeidsmarkt krijgen bij ons werk, opleiding en begeleiding. Het doel: niemand vertrekt met alleen uren op z'n cv.</p>
+        <div class="social-pillars">
+          <div class="social-pillar">
+            <div class="social-pillar-icon">
+              <i data-lucide="users"></i>
+            </div>
+            <h3>Re-integratie in de keuken</h3>
+            <p>Keukenpersoneel via re-integratiebureaus Amsterdam. Mensen met een langdurige uitkering, jongeren zonder startkwalificatie, of mensen die na een moeilijke periode weer willen opbouwen. Ze werken mee in de keuken en leren het vak.</p>
+          </div>
+          <div class="social-pillar">
+            <div class="social-pillar-icon" style="background:var(--c-orange);">
+              <i data-lucide="graduation-cap"></i>
+            </div>
+            <h3>Duaal traject: werk + diploma</h3>
+            <p>Medewerkers volgen naast hun werk een kookopleiding. Ze gaan niet alleen weg met ervaring, maar ook met een horeca-diploma. In samenwerking met een opleider. Deels gefinancierd via SBB praktijkleervergoeding.</p>
+          </div>
+          <div class="social-pillar">
+            <div class="social-pillar-icon">
+              <i data-lucide="shield-check"></i>
+            </div>
+            <h3>Begeleiding op de werkvloer</h3>
+            <p>Een parttime maatschappelijk werker staat naast het keukenteam. Niet iedereen via re-integratie is even stabiel — dat erkennen we. De begeleider bewaakt veiligheid en het menselijke aspect. Dat is geen luxe, dat is noodzaak.</p>
+          </div>
+          <div class="social-pillar">
+            <div class="social-pillar-icon">
+              <i data-lucide="trending-up"></i>
+            </div>
+            <h3>Doorstroom als doel</h3>
+            <p>Na het traject hebben medewerkers werkervaring, referenties en een diploma. Ze kunnen doorstromen naar partnerrestaurants of doorgroeien bij ons. Ambitie: 80% stroomt binnen twee jaar door naar betaald werk of een vervolgopleiding.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DONATIE SECTION (new) -->
+    <section class="story-section reveal">
+      <div class="story-content">
+        <div class="story-image">
+          <img src="assets/Mensen met een verhaal.jpeg" alt="Mensen die een maaltijd verdienen"/>
+        </div>
+        <div class="story-text">
+          <div class="section-label" style="margin-bottom:8px;">Community</div>
+          <h2>Wat overblijft, geven we weg</h2>
+          <p>
+            Niet elke maaltijd wordt verkocht. Wat overblijft gaat niet de prullenbak in. We doneren overgebleven maaltijden aan het Leger des Heils en de voedselbank Amsterdam.
+          </p>
+          <p>
+            Onze maaltijden zijn vers en moeten dezelfde dag op. Dat maakt ze juist waardevol voor mensen die niet kunnen wachten op een wekelijkse uitgifte. Vanaf 10 uur beschikbaar, op is op.
+          </p>
+          <p>
+            Elk persoon dat we bereiken zit in een netwerk van mensen in dezelfde situatie. Dat multiplier-effect maakt doneren meer dan een gebaar.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLANET: SOURCING SECTION -->
+    <section class="sourcing-section reveal">
+      <div class="section-label" style="text-align:center;margin-bottom:8px;">Planet</div>
+      <h2>Waar ons eten vandaan komt</h2>
+      <div class="sources-grid">
+        <div class="source-card">
+          <div class="source-icon">
+            <i data-lucide="truck"></i>
+          </div>
+          <h3>InstockMarket</h3>
+          <p>Duurzame horecagroothandel. 200+ boeren en producenten, 80% gered voedsel.</p>
+        </div>
+        <div class="source-card">
+          <div class="source-icon">
+            <i data-lucide="store"></i>
+          </div>
+          <h3>Food Center Amsterdam</h3>
+          <p>Groothandelsmarkt Sloterdijk. Directe inkoop van dagresten.</p>
+        </div>
+        <div class="source-card">
+          <div class="source-icon">
+            <i data-lucide="cookie"></i>
+          </div>
+          <h3>Lokale bakkerijen</h3>
+          <p>Dag-oud brood en gebak van Amsterdamse bakkers.</p>
+        </div>
+        <div class="source-card">
+          <div class="source-icon">
+            <i data-lucide="recycle"></i>
+          </div>
+          <h3>Voedselcirkel Amsterdam</h3>
+          <p>Netwerk dat 416.000 kg/jaar redt van verspilling.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT CALCULATOR (added to over-ons) -->
+    <section class="section-calculator reveal" id="calculator">
+      <div class="container">
+        <div style="text-align:center">
+          <span class="label">Jouw impact</span>
+          <h2 class="section-title">Bereken je persoonlijke impact</h2>
+          <p class="section-sub" style="margin:0 auto var(--sp-xl)">
+            Beweeg de slider en zie wat het betekent als jij bij Surplus Meals afhaalt.
+          </p>
+        </div>
+        <div class="calc-wrap">
+          <div class="slider-wrap">
+            <p class="calc-input-label">
+              Ik haal <strong id="mealsPerWeek">3</strong> avonden per week af
+            </p>
+            <input type="range" id="mealSlider" class="range-slider" min="1" max="7" value="3" aria-label="Aantal avonden per week"/>
+            <div class="slider-marks">
+              <span>1 avond</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7 avonden</span>
+            </div>
+          </div>
+          <div class="calc-results">
+            <div class="calc-card calc-card--green">
+              <div class="calc-icon"><i data-lucide="leaf"></i></div>
+              <span class="calc-number" id="calcFood">62</span>
+              <span class="calc-unit">kg voedsel</span>
+              <p class="calc-desc">gered per jaar dat anders verspild was</p>
+            </div>
+            <div class="calc-card calc-card--dark">
+              <div class="calc-icon"><i data-lucide="cloud"></i></div>
+              <span class="calc-number" id="calcCO2">156</span>
+              <span class="calc-unit">kg CO₂</span>
+              <p class="calc-desc">bespaard per jaar dankzij minder verspilling</p>
+            </div>
+            <div class="calc-card calc-card--orange">
+              <div class="calc-icon"><i data-lucide="euro"></i></div>
+              <span class="calc-number" id="calcMoney">1.326</span>
+              <span class="calc-unit">euro minder</span>
+              <p class="calc-desc">dan bij een gemiddelde Thuisbezorgd-order (€18)</p>
+            </div>
+          </div>
+          <p class="calc-footnote">
+            Berekening: 0,4 kg voedsel/maaltijd × 2,5 kg CO₂/kg. Verschil met gem. Thuisbezorgd €18. Indicatief.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMPACT BADGES (greenwashing criteria 5: visuele claims met concrete cijfers) -->
+    <section class="impact-section reveal">
+      <div class="section-label">Meetbare impact</div>
+      <h2>Concrete cijfers, geen vage beloftes.</h2>
+      <p style="text-align:center;max-width:600px;margin:0 auto 32px;color:var(--c-text-light);font-size:15px;">
+        We publiceren onze impact wekelijks. Deze cijfers worden bijgehouden via weging in de keuken en registratie in ons systeem.
+      </p>
+      <div class="impact-counters">
+        <div class="impact-counter" style="position:relative;">
+          <div style="position:absolute;top:-8px;right:-8px;background:var(--c-green-mid);color:white;font-size:10px;font-weight:700;padding:4px 8px;border-radius:20px;letter-spacing:0.5px;">GEWOGEN</div>
+          <div class="counter-value">350g</div>
+          <div class="counter-label">gered voedsel per maaltijd</div>
+        </div>
+        <div class="impact-counter" style="position:relative;">
+          <div style="position:absolute;top:-8px;right:-8px;background:var(--c-green-mid);color:white;font-size:10px;font-weight:700;padding:4px 8px;border-radius:20px;letter-spacing:0.5px;">JAAR 1</div>
+          <div class="counter-value">1.500</div>
+          <div class="counter-label">kg voedsel gered (prognose)</div>
+        </div>
+        <div class="impact-counter" style="position:relative;">
+          <div style="position:absolute;top:-8px;right:-8px;background:var(--c-orange);color:white;font-size:10px;font-weight:700;padding:4px 8px;border-radius:20px;letter-spacing:0.5px;">BEREKEND</div>
+          <div class="counter-value">0 kg</div>
+          <div class="counter-label">CO₂ uitstoot bezorging (fietskoerier)</div>
+        </div>
+        <div class="impact-counter" style="position:relative;">
+          <div style="position:absolute;top:-8px;right:-8px;background:var(--c-green-mid);color:white;font-size:10px;font-weight:700;padding:4px 8px;border-radius:20px;letter-spacing:0.5px;">GEREGISTREERD</div>
+          <div class="counter-value">3</div>
+          <div class="counter-label">re-integratieplekken (jaar 1)</div>
+        </div>
+        <div class="impact-counter" style="position:relative;">
+          <div style="position:absolute;top:-8px;right:-8px;background:var(--c-orange);color:white;font-size:10px;font-weight:700;padding:4px 8px;border-radius:20px;letter-spacing:0.5px;">DOELSTELLING</div>
+          <div class="counter-value">80%</div>
+          <div class="counter-label">doorstroom naar vaste baan (2 jaar)</div>
+        </div>
+      </div>
+      <p style="text-align:center;margin-top:20px;font-size:12px;color:var(--c-text-light);">
+        Bron: eigen weging en registratie. CO₂-berekening: WUR voedselverspillingsmonitor (2,5 kg CO₂/kg verspild voedsel). Financieel plan: L3 Challenge 13.
+      </p>
+    </section>
+
+    <!-- EERLIJKE VERGELIJKING (greenwashing criteria 3: eerlijke vergelijkingen) -->
+    <section class="story-section reveal" style="background:var(--c-green-pale);padding:60px 0;">
+      <div style="max-width:1100px;margin:0 auto;padding:0 40px;">
+        <div style="text-align:center;margin-bottom:40px;">
+          <div class="section-label">Eerlijk vergelijken</div>
+          <h2 style="margin-bottom:12px;">Hoe we ons verhouden tot anderen</h2>
+          <p style="color:var(--c-text-light);max-width:640px;margin:0 auto;">We geloven in eerlijkheid, ook als dat betekent dat we toegeven waar anderen het beter doen.</p>
+        </div>
+        <div style="overflow-x:auto;">
+          <table style="width:100%;border-collapse:collapse;background:white;border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(27,67,50,0.08);">
+            <thead>
+              <tr style="background:var(--c-green-dark);color:white;">
+                <th style="padding:16px 20px;text-align:left;font-weight:600;font-size:14px;"></th>
+                <th style="padding:16px 20px;text-align:center;font-weight:600;font-size:14px;">Surplus Meals</th>
+                <th style="padding:16px 20px;text-align:center;font-weight:600;font-size:14px;">Instock</th>
+                <th style="padding:16px 20px;text-align:center;font-weight:600;font-size:14px;">Too Good To Go</th>
+                <th style="padding:16px 20px;text-align:center;font-weight:600;font-size:14px;">HelloFresh</th>
+              </tr>
+            </thead>
+            <tbody style="font-size:14px;">
+              <tr style="border-bottom:1px solid #f0ece6;">
+                <td style="padding:14px 20px;font-weight:500;">100% surplusvoedsel</td>
+                <td style="padding:14px 20px;text-align:center;color:var(--c-green-mid);font-weight:700;">Ja</td>
+                <td style="padding:14px 20px;text-align:center;color:var(--c-green-mid);">Deels</td>
+                <td style="padding:14px 20px;text-align:center;color:var(--c-green-mid);">Ja</td>
+                <td style="padding:14px 20px;text-align:center;color:#999;">Nee</td>
+              </tr>
+              <tr style="border-bottom:1px solid #f0ece6;">
+                <td style="padding:14px 20px;font-weight:500;">Prijs per maaltijd</td>
+                <td style="padding:14px 20px;text-align:center;font-weight:700;">€7,50</td>
+                <td style="padding:14px 20px;text-align:center;">€15-25</td>
+                <td style="padding:14px 20px;text-align:center;">€4-6</td>
+                <td style="padding:14px 20px;text-align:center;">€5-7</td>
+              </tr>
+              <tr style="border-bottom:1px solid #f0ece6;">
+                <td style="padding:14px 20px;font-weight:500;">Zelf kiezen wat je eet</td>
+                <td style="padding:14px 20px;text-align:center;color:var(--c-green-mid);font-weight:700;">Ja</td>
+                <td style="padding:14px 20px;text-align:center;color:var(--c-green-mid);">Ja</td>
+                <td style="padding:14px 20px;text-align:center;color:#999;">Nee (verrassingspakket)</td>
+                <td style="padding:14px 20px;text-align:center;color:var(--c-green-mid);">Ja</td>
+              </tr>
+              <tr style="border-bottom:1px solid #f0ece6;">
+                <td style="padding:14px 20px;font-weight:500;">Kant-en-klaar (geen bereiding)</td>
+                <td style="padding:14px 20px;text-align:center;color:var(--c-green-mid);font-weight:700;">Ja</td>
+                <td style="padding:14px 20px;text-align:center;color:var(--c-green-mid);">Ja</td>
+                <td style="padding:14px 20px;text-align:center;">Wisselend</td>
+                <td style="padding:14px 20px;text-align:center;color:#999;">Nee (zelf koken)</td>
+              </tr>
+              <tr style="border-bottom:1px solid #f0ece6;">
+                <td style="padding:14px 20px;font-weight:500;">Sociale impact (werkplekken)</td>
+                <td style="padding:14px 20px;text-align:center;color:var(--c-green-mid);font-weight:700;">Ja</td>
+                <td style="padding:14px 20px;text-align:center;color:#999;">Nee</td>
+                <td style="padding:14px 20px;text-align:center;color:#999;">Nee</td>
+                <td style="padding:14px 20px;text-align:center;color:#999;">Nee</td>
+              </tr>
+              <tr style="border-bottom:1px solid #f0ece6;">
+                <td style="padding:14px 20px;font-weight:500;">Bezorging</td>
+                <td style="padding:14px 20px;text-align:center;">Afhaal + fietsbezorging</td>
+                <td style="padding:14px 20px;text-align:center;color:var(--c-green-mid);">Restaurant</td>
+                <td style="padding:14px 20px;text-align:center;color:var(--c-green-mid);">Afhaal bij winkel</td>
+                <td style="padding:14px 20px;text-align:center;color:var(--c-green-mid);">Thuisbezorgd</td>
+              </tr>
+              <tr>
+                <td style="padding:14px 20px;font-weight:500;">Schaal en beschikbaarheid</td>
+                <td style="padding:14px 20px;text-align:center;color:#999;">Klein (Amsterdam Oost)</td>
+                <td style="padding:14px 20px;text-align:center;color:var(--c-green-mid);">Groot (NL horeca)</td>
+                <td style="padding:14px 20px;text-align:center;color:var(--c-green-mid);">Zeer groot (EU)</td>
+                <td style="padding:14px 20px;text-align:center;color:var(--c-green-mid);">Zeer groot (EU)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="text-align:center;margin-top:20px;font-size:13px;color:var(--c-text-light);">
+          Too Good To Go is goedkoper en groter. HelloFresh bezorgt aan huis. Instock heeft een breder horecabereik. Wat wij wel doen en zij niet: betaalbare kant-en-klare maaltijden van 100% surplus, bereid door mensen in een re-integratietraject.
+        </p>
+      </div>
+    </section>
+
+    <!-- ONZE BEPERKINGEN (greenwashing criteria 4: transparante claims over beperkingen) -->
+    <section class="story-section reveal">
+      <div style="max-width:900px;margin:0 auto;padding:0 40px;">
+        <div style="text-align:center;margin-bottom:32px;">
+          <div class="section-label">Eerlijk over onszelf</div>
+          <h2 style="margin-bottom:12px;">Wat we nog niet goed doen</h2>
+          <p style="color:var(--c-text-light);max-width:640px;margin:0 auto;">Transparantie betekent ook eerlijk zijn over waar we tekortschieten. Dit zijn de punten waar we aan werken.</p>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;">
+          <div style="background:white;border-radius:12px;padding:24px;border-left:4px solid var(--c-orange);">
+            <h3 style="font-size:16px;margin:0 0 8px 0;color:var(--c-green-dark);">Energieverbruik keuken</h3>
+            <p style="font-size:14px;margin:0;color:var(--c-text-light);line-height:1.6;">Onze gedeelde keuken draait op gas en elektriciteit. We weten nog niet precies hoeveel energie we per maaltijd verbruiken. In jaar 2 willen we dit meten en publiceren.</p>
+          </div>
+          <div style="background:white;border-radius:12px;padding:24px;border-left:4px solid var(--c-orange);">
+            <h3 style="font-size:16px;margin:0 0 8px 0;color:var(--c-green-dark);">Verpakking</h3>
+            <p style="font-size:14px;margin:0;color:var(--c-text-light);line-height:1.6;">Onze verpakkingen zijn composteerbaar, maar de productie ervan is niet emissievrij. Vanaf jaar 2 willen we overstappen op een herbruikbaar systeem met statiegeld.</p>
+          </div>
+          <div style="background:white;border-radius:12px;padding:24px;border-left:4px solid var(--c-orange);">
+            <h3 style="font-size:16px;margin:0 0 8px 0;color:var(--c-green-dark);">Transport</h3>
+            <p style="font-size:14px;margin:0;color:var(--c-text-light);line-height:1.6;">We halen voedsel op bij leveranciers met een busje. Dat kost brandstof. We onderzoeken of een bakfietsroute voor dichtbije leveranciers haalbaar is.</p>
+          </div>
+          <div style="background:white;border-radius:12px;padding:24px;border-left:4px solid var(--c-orange);">
+            <h3 style="font-size:16px;margin:0 0 8px 0;color:var(--c-green-dark);">Seizoensafhankelijkheid</h3>
+            <p style="font-size:14px;margin:0;color:var(--c-text-light);line-height:1.6;">In sommige periodes is er minder lokaal surplus beschikbaar. Ons menu wisselt op basis van wat er is, en dat betekent dat we niet altijd hetzelfde kunnen bieden.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- B CORP AMBITION -->
+    <section class="story-section story-section-reverse reveal">
+      <div class="story-content">
+        <div class="story-text">
+          <div class="section-label" style="margin-bottom:8px;">Ambitie</div>
+          <h2>Op weg naar B Corp</h2>
+          <p>
+            B Corp is geen stempel. Het is een manier van denken over hoe je je bedrijf runt. We richten onze werkprocessen in langs de B Corp-criteria: van hoe we inkopen tot hoe we met medewerkers omgaan.
+          </p>
+          <p>
+            We zijn er nog niet. Maar elk proces dat we nu opzetten, bouwen we met die richting in gedachten. Niet omdat het moet, maar omdat het de manier is waarop we willen ondernemen.
+          </p>
+        </div>
+        <div class="story-image">
+          <img src="assets/Meetbare impact.jpg" alt="Meetbare impact"/>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section reveal">
+      <h2>Meedoen?</h2>
+      <p>Bestel een maaltijd en steun direct re-integratie, verminder voedselverspilling en eet lekker.</p>
+      <a href="menu.html" class="btn btn-primary">Bekijk het menu</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <div class="footer-logo">Surplus<span>Meals</span></div>
+        <p class="footer-tagline">Verse maaltijden van gered voedsel.<br/>Amsterdam, sinds 2026.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Menu</h4>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Bestellen</a>
+        <a href="over-ons.html">Over ons</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:info@surplusmeals.nl">info@surplusmeals.nl</a>
+        <a href="tel:+31612345678">+31 6 1234 5678</a>
+        <p>Amsterdam Oost</p>
+      </div>
+      <div class="footer-col">
+        <h4>Blijf op de hoogte</h4>
+        <form class="footer-signup" onsubmit="event.preventDefault(); this.innerHTML='<p style=color:var(--c-green-light)>Bedankt!</p>'">
+          <input type="email" placeholder="jouw@email.nl" class="footer-input" required/>
+          <button type="submit" class="btn btn-primary" style="padding:12px 20px;font-size:13px">Aanmelden</button>
+        </form>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><i data-lucide="instagram" style="width:18px;height:18px"></i></a>
+          <a href="#" aria-label="LinkedIn"><i data-lucide="linkedin" style="width:18px;height:18px"></i></a>
+          <a href="#" aria-label="Facebook"><i data-lucide="facebook" style="width:18px;height:18px"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Surplus Meals — Amsterdam. Alle rechten voorbehouden.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacybeleid</a>
+        <a href="#">Voorwaarden</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-to-top" id="scrollToTop" aria-label="Terug naar boven">
+    <i data-lucide="chevron-up" style="width:20px;height:20px"></i>
+  </button>
+
+  <script src="js/cart.js"></script>
+  <script src="js/calculator.js"></script>
+  <script>
+    lucide.createIcons();
+    new ImpactCalculator();
+  </script>
+</body>
+</html>
