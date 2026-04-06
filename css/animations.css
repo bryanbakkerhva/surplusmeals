@@ -1,0 +1,199 @@
+/* ═══════════════════════════════════════════════════════
+   ANIMATIONS.CSS — Surplus Meals Website
+   Keyframes · Flip clock · Hover effects · Transitions
+═══════════════════════════════════════════════════════ */
+
+/* ── KEYFRAMES ── */
+
+@keyframes wordReveal {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes blobFloat1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(24px, 32px) scale(1.04); }
+  66%       { transform: translate(-16px, 20px) scale(0.97); }
+}
+
+@keyframes blobFloat2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%       { transform: translate(-20px, -28px) scale(1.05); }
+  70%       { transform: translate(12px, -14px) scale(0.96); }
+}
+
+@keyframes blobFloat3 {
+  0%, 100% { transform: translate(0, 0); }
+  50%       { transform: translate(30px, -20px); }
+}
+
+/* Ticker */
+@keyframes tickerScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Pulse on stat numbers */
+@keyframes numPop {
+  0%   { transform: scale(1); }
+  40%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Shimmer on featured price card */
+@keyframes shimmer {
+  from { transform: translateX(-100%) skewX(-12deg); }
+  to   { transform: translateX(200%) skewX(-12deg); }
+}
+
+/* Counter number flip */
+@keyframes numFlip {
+  from { transform: translateY(0); opacity: 1; }
+  50%  { transform: translateY(-8px); opacity: 0; }
+  51%  { transform: translateY(8px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+
+/* Glow pulse for CTA button */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 4px 18px rgba(224,123,57,0.35); }
+  50%       { box-shadow: 0 4px 32px rgba(224,123,57,0.6); }
+}
+
+/* ── FLIP CLOCK ── */
+/* Animation handled via inline CSS transitions in flip-clock.js (rotateX perspective flip) */
+
+/* ── SCROLL REVEAL ── */
+
+/* Stagger helpers for grid children */
+.reveal-stagger > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger > *:nth-child(2) { transition-delay: 0.15s; }
+.reveal-stagger > *:nth-child(3) { transition-delay: 0.25s; }
+.reveal-stagger > *:nth-child(4) { transition-delay: 0.35s; }
+
+.reveal-stagger > .reveal:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger > .reveal:nth-child(2) { transition-delay: 0.15s; }
+.reveal-stagger > .reveal:nth-child(3) { transition-delay: 0.25s; }
+.reveal-stagger > .reveal:nth-child(4) { transition-delay: 0.35s; }
+
+/* ── MICRO-INTERACTIONS ── */
+
+/* Hover lift for generic cards */
+.hover-lift {
+  transition: transform var(--t-med) var(--ease-out),
+              box-shadow var(--t-med) var(--ease-out);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Glow pulse for primary CTA */
+.btn-primary {
+  animation: glowPulse 3s ease-in-out infinite;
+}
+.btn-primary:hover {
+  animation: none;
+}
+
+/* Shimmer on featured price card */
+.price-card--featured::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,0.04),
+    transparent
+  );
+  animation: shimmer 4s ease-in-out infinite;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.price-card--featured { overflow: hidden; }
+
+/* Counter number animation when updated */
+.calc-number.is-updating {
+  animation: numFlip 0.35s ease-in-out;
+}
+
+/* ── TIMELINE HOVER ── */
+.timeline-item {
+  transition: transform var(--t-med) var(--ease-out);
+}
+
+.timeline-item:hover {
+  transform: translateX(4px);
+}
+
+.timeline-item:hover .timeline-dot {
+  background: var(--c-green);
+  border-color: var(--c-green);
+}
+
+/* ── QUOTE CARDS ── */
+.quote-card {
+  transition: transform var(--t-med) var(--ease-out),
+              border-color var(--t-med),
+              box-shadow var(--t-med);
+}
+
+.quote-card:hover {
+  transform: translateY(-3px);
+}
+
+/* ── STEP ICON TRANSITION ── */
+.step-card:hover .step-icon {
+  transition: background var(--t-med), color var(--t-med), transform var(--t-med) var(--ease-out);
+  transform: scale(1.1) rotate(-5deg);
+}
+
+/* ── PILLAR CARD ICON ── */
+.pillar-card:hover .pillar-icon {
+  background: rgba(183,228,199,0.18);
+  transition: background var(--t-med);
+}
+
+/* ── NAV LINK UNDERLINE ── */
+.nav-links a {
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -3px; left: 0;
+  width: 0; height: 2px;
+  background: var(--c-orange);
+  transition: width var(--t-med) var(--ease-out);
+  border-radius: 1px;
+}
+
+.nav-links a:hover::after { width: 100%; }
+
+/* ── SCROLL PROGRESS GRADIENT ── */
+.scroll-progress {
+  background: linear-gradient(
+    90deg,
+    var(--c-green-mid) 0%,
+    var(--c-green) 40%,
+    var(--c-orange) 100%
+  );
+}
+
+/* ── SIGNATURE / HANDWRITTEN FEEL ── */
+@keyframes signatureWrite {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
+}
